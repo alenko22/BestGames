@@ -1,0 +1,17 @@
+.light-theme {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --text-primary: #121212;
+    --text-secondary: #666666;
+    --accent: #FF6B35;
+    --border: #E0E0E0;
+}
+
+/* Примеры изменений для светлой темы */
+.light-theme .header {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.light-theme .game-card {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}

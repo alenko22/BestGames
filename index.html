@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestGames - Маркетплейс игр</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Логотип -->
+                <a href="index.html" class="logo">
+                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
+                        <!-- Векторный логотип BestGames -->
+                        <path fill="#FF6B35" d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm10 28l-8-8 8-8v16zM10 12l8 8-8 8V12z"/>
+                    </svg>
+                    <span class="logo__text">BestGames</span>
+                </a>
+
+                <!-- Навигация для десктопа -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#search-section" class="nav__link">Поиск</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="catalog.html" class="nav__link">Каталог игр</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="login.html" class="nav__link">Войти</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="profile.html" class="nav__link nav__link--profile">Личный кабинет</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Слайдер -->
+        <section class="slider">
+            <div class="container">
+                <div class="slider__container">
+                    <!-- Слайды -->
+                    <div class="slider__slides">
+                        <div class="slide slide--active">
+                            <div class="slide__content">
+                                <h2 class="slide__title">Cyberpunk 2077</h2>
+                                <p class="slide__price">1999 ₽</p>
+                                <a href="#" class="btn btn--primary">Подробнее</a>
+                            </div>
+                            <div class="slide__image">
+                                <img src="images/games/cyberpunk.jpg" alt="Cyberpunk 2077">
+                            </div>
+                        </div>
+                        <!-- Добавьте еще 2 слайда -->
+                    </div>
+                    <!-- Индикаторы слайдов -->
+                    <div class="slider__indicators">
+                        <button class="slider__indicator slider__indicator--active"></button>
+                        <button class="slider__indicator"></button>
+                        <button class="slider__indicator"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Быстрый поиск -->
+        <section id="search-section" class="quick-search">
+            <div class="container">
+                <h2 class="section-title">Быстрый поиск по жанрам</h2>
+                <form class="search-form">
+                    <input type="text" class="search-form__input" placeholder="Начните вводить жанр...">
+                    <button type="submit" class="search-form__btn">Найти</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section-title">Наши преимущества</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">💰</div>
+                        <h3 class="advantage-card__title">Привлекательные цены</h3>
+                    </div>
+                    <!-- Добавьте остальные преимущества -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные игры -->
+        <section class="popular-games">
+            <div class="container">
+                <h2 class="section-title">Популярные игры</h2>
+                <div class="games-grid">
+                    <!-- Карточки игр -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Партнеры -->
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title">Наши партнеры</h2>
+                <div class="partners__grid">
+                    <!-- Логотипы партнеров -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__contacts">
+                    <p>📞 8-800-999-55-99</p>
+                    <p>✉️ best@games.ru</p>
+                </div>
+                <div class="footer__nav">
+                    <!-- Навигация в подвале -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
