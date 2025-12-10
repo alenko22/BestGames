@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestGames - Маркетплейс компьютерных игр</title>
+    <title>BestGames - Маркетплейс компьютерных игр (Светлая тема)</title>
+    <link rel="stylesheet" href="css/style_light.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,7 @@
         <div class="container">
             <div class="header__inner">
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="index_light.html" class="logo">
                     <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -49,8 +50,7 @@
                 </button>
 
                 <!-- Theme Toggle -->
-                <a href="index_light.html" class="theme-toggle" aria-label="Переключить на светлую тему">
-                    <i class="fas fa-sun"></i>
+                <a href="index.html" class="theme-toggle" aria-label="Переключить на темную тему">
                 </a>
             </div>
         </div>
@@ -62,36 +62,39 @@
             <!-- Slide 1 -->
             <div class="slider__slide slider__slide--active">
                 <div class="slider__content">
-                    <h2 class="slider__title">Clair Obscur: Expedition 33</h2>
-                    <p class="slider__description">Окунитесь в Прекрасную эпоху Франции</p>
-                    <div class="slider__price">1,200 ₽</div>
+                    <h2 class="slider__title">Cyberpunk 2077: Phantom Liberty</h2>
+                    <p class="slider__description">Новое приключение в Найт-Сити. Расширение с захватывающим сюжетом и новыми возможностями.</p>
+                    <div class="slider__price">2,499 ₽</div>
+                    <a href="#" class="btn btn--primary">Подробнее</a>
                 </div>
                 <div class="slider__image">
-                    <img src="img/clair.jpeg" alt="Факторио" class="slider__image-placeholder">
+                    <div class="slider__image-placeholder" style="background: linear-gradient(45deg, #6C63FF, #FF6584);"></div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slider__slide">
                 <div class="slider__content">
-                    <h2 class="slider__title">Dispatch</h2>
-                    <p class="slider__description">Супергеройская комедия</p>
+                    <h2 class="slider__title">Baldur's Gate 3</h2>
+                    <p class="slider__description">Эпическая RPG от создателей Divinity. Глубокий сюжет, тактические бои и свобода выбора.</p>
                     <div class="slider__price">3,599 ₽</div>
+                    <a href="#" class="btn btn--primary">Подробнее</a>
                 </div>
                 <div class="slider__image">
-                    <img src="img/dispatch.jpeg" alt="Факторио" class="slider__image-placeholder">
+                    <div class="slider__image-placeholder" style="background: linear-gradient(45deg, #4A00E0, #8E2DE2);"></div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slider__slide">
                 <div class="slider__content">
-                    <h2 class="slider__title">Hollow Knight: Silksong</h2>
-                    <p class="slider__description">Долгожданная метроидвания от Team Cherry</p>
+                    <h2 class="slider__title">Starfield</h2>
+                    <p class="slider__description">Исследуйте галактику в новой игре от Bethesda. Более 1000 планет для исследования.</p>
                     <div class="slider__price">4,299 ₽</div>
+                    <a href="#" class="btn btn--primary">Подробнее</a>
                 </div>
                 <div class="slider__image">
-                    <img src="img/silksong.jpeg" alt="Факторио" class="slider__image-placeholder">
+                    <div class="slider__image-placeholder" style="background: linear-gradient(45deg, #159957, #155799);"></div>
                 </div>
             </div>
 
@@ -112,9 +115,31 @@
         </div>
     </section>
 
+    <!-- Quick Search -->
+    <section class="search" id="search-section">
+        <div class="container">
+            <h2 class="section-title">Быстрый поиск по жанрам</h2>
+            <div class="search__box">
+                <div class="search__input-wrapper">
+                    <input type="text" class="search__input" placeholder="Начните вводить жанр (RPG, шутер, стратегия...)">
+                    <div class="search__suggestions">
+                        <div class="search__suggestion">RPG</div>
+                        <div class="search__suggestion">Шутер</div>
+                        <div class="search__suggestion">Стратегия</div>
+                        <div class="search__suggestion">Приключение</div>
+                        <div class="search__suggestion">Симулятор</div>
+                        <div class="search__suggestion">Спорт</div>
+                    </div>
+                </div>
+                <button class="btn btn--primary search__button">Найти</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
     <section class="advantages">
         <div class="container">
-            <h2 class="section-title">Почему мы?</h2>
+            <h2 class="section-title">Почему выбирают BestGames?</h2>
             <div class="advantages__grid">
                 <div class="advantage-card">
                     <div class="advantage-card__icon">
@@ -151,36 +176,15 @@
         </div>
     </section>
 
-
-    <!-- Quick Search -->
-    <section class="search" id="search-section">
-        <div class="container">
-            <h2 class="section-title">Поиск по жанрам</h2>
-            <div class="search__box">
-                <div class="search__input-wrapper">
-                    <input type="text" class="search__input" placeholder="Введите желаемый жанр">
-                    <div class="search__suggestions">
-                        <div class="search__suggestion">RPG</div>
-                        <div class="search__suggestion">Шутер</div>
-                        <div class="search__suggestion">Стратегия</div>
-                        <div class="search__suggestion">Приключение</div>
-                        <div class="search__suggestion">Симулятор</div>
-                        <div class="search__suggestion">Спорт</div>
-                    </div>
-                </div>
-                <button class="btn btn--primary search__button">Найти</button>
-            </div>
-        </div>
-    </section>
-    
-<!-- Popular Games -->
+    <!-- Popular Games -->
     <section class="games">
         <div class="container">
-            <h2 class="section-title">Популярное</h2>
+            <h2 class="section-title">Популярные игры</h2>
             <div class="games__grid">
+                <!-- Game 1 -->
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <div class="game-card__image-placeholder" style="background: linear-gradient(45deg, #6C63FF, #FF6584);"></div>
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">The Witcher 3: Wild Hunt</h3>
@@ -202,9 +206,10 @@
                     </div>
                 </a>
 
+                <!-- Game 2 -->
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <div class="game-card__image-placeholder" style="background: linear-gradient(45deg, #4A00E0, #8E2DE2);"></div>
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Call of Duty: Modern Warfare III</h3>
@@ -221,14 +226,15 @@
                         </div>
                         <div class="game-card__footer">
                             <div class="game-card__price">3,999 ₽</div>
-                            <span class="game-card__link">Подробнее </i></span>
+                            <span class="game-card__link">Подробнее</span>
                         </div>
                     </div>
                 </a>
 
+                <!-- Game 3 -->
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <div class="game-card__image-placeholder" style="background: linear-gradient(45deg, #159957, #155799);"></div>
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">EA Sports FC 24</h3>
@@ -250,9 +256,10 @@
                     </div>
                 </a>
 
+                <!-- Game 4 -->
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <div class="game-card__image-placeholder" style="background: linear-gradient(45deg, #f46b45, #eea849);"></div>
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Diablo IV</h3>
@@ -274,9 +281,10 @@
                     </div>
                 </a>
 
+                <!-- Game 5 -->
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <div class="game-card__image-placeholder" style="background: linear-gradient(45deg, #ff416c, #ff4b2b);"></div>
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Resident Evil 4 Remake</h3>
@@ -301,9 +309,8 @@
         </div>
     </section>
 
-
     <!-- Partners -->
-    <section class="partners">
+     <section class="partners">
         <div class="container">
             <h2 class="section-title">Наши партнеры</h2>
             <div class="partners__grid">
@@ -334,6 +341,7 @@
                         <h3 class="partner-card__name">PlayStation</h3>
                     </div>
                 </a>
+                
             </div>
         </div>
     </section>
@@ -346,11 +354,11 @@
                     <h3 class="footer__title">Контакты</h3>
                     <ul class="footer__list">
                         <li class="footer__item">
-                            <span>Телефон: </span>
+                            <i class="fas fa-phone"></i>
                             <span>8-800-999-55-99</span>
                         </li>
                         <li class="footer__item">
-                            <span>Почта: </span>
+                            <i class="fas fa-envelope"></i>
                             <span>best@games.ru</span>
                         </li>
                     </ul>
@@ -361,6 +369,7 @@
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#">Помощь</a></li>
                         <li class="footer__item"><a href="#">Оплата</a></li>
+                        <li class="footer__item"><a href="#">Доставка</a></li>
                         <li class="footer__item"><a href="#">Возврат</a></li>
                     </ul>
                 </div>
@@ -369,6 +378,7 @@
                     <h3 class="footer__title">Партнерам</h3>
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#">Стать партнером</a></li>
+                        <li class="footer__item"><a href="#">Реклама</a></li>
                         <li class="footer__item"><a href="#">Для разработчиков</a></li>
                     </ul>
                 </div>
@@ -377,6 +387,7 @@
                     <h3 class="footer__title">О нас</h3>
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#">Компания</a></li>
+                        <li class="footer__item"><a href="#">Вакансии</a></li>
                         <li class="footer__item"><a href="#">Блог</a></li>
                         <li class="footer__item"><a href="#">Контакты</a></li>
                     </ul>
@@ -385,11 +396,41 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Навигация</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="index.html">Главная</a></li>
+                        <li class="footer__item"><a href="index_light.html">Главная</a></li>
                         <li class="footer__item"><a href="register.html">Регистрация</a></li>
                         <li class="footer__item"><a href="login.html">Авторизация</a></li>
                         <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                        <li class="footer__item"><a href="#search-section">Поиск</a></li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024 BestGames. Все права защищены.</div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item"><a href="#search-section" class="mobile-nav__link"><i class="fas fa-search"></i> Поиск</a></li>
+                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог игр</a></li>
+                    <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+                    <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+                    <li class="mobile-nav__item"><a href="profile.html" class="mobile-nav__link"><i class="fas fa-user-circle"></i> Личный кабинет</a></li>
+                </ul>
             </nav>
         </div>
     </div>

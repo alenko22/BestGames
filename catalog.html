@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог игр - BestGames</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF" />
+                                <stop offset="100%" stop-color="#FF6584" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
+                    </svg>
+                    <span class="logo__text">BestGames</span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="login.html" class="nav__link">Войти</a></li>
+                        <li class="nav__item"><a href="register.html" class="nav__link nav__link--accent">Регистрация</a></li>
+                        <li class="nav__item"><a href="profile.html" class="nav__link">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+
+                <!-- Search Button for Mobile -->
+                <button class="search-toggle" id="mobile-search-toggle" aria-label="Поиск">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Page -->
+    <main class="catalog-page">
+        <div class="container">
+            <div class="catalog-header">
+                <h1 class="catalog-title">Каталог</h1>
+                
+                <!-- Mobile Search Bar -->
+                <div class="catalog-mobile-search" id="mobile-search">
+                    <div class="search__input-wrapper">
+                        <i class="fas fa-search search__icon"></i>
+                        <input type="text" class="search__input" placeholder="Поиск по названию, жанру...">
+                    </div>
+                    <button class="btn btn--primary search__button">Найти</button>
+                </div>
+            </div>
+
+            <div class="catalog-content">
+                <!-- Sidebar with Filters -->
+                <aside class="catalog-sidebar" id="catalog-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title">Фильтры</h3>
+                        <button class="sidebar-close" id="sidebar-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Filter by Genre -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Жанры</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="rpg">
+                                <span class="filter-option__text">RPG</span>
+                                <span class="filter-option__count">(124)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="shooter">
+                                <span class="filter-option__text">Шутеры</span>
+                                <span class="filter-option__count">(89)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="strategy">
+                                <span class="filter-option__text">Стратегии</span>
+                                <span class="filter-option__count">(67)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="adventure">
+                                <span class="filter-option__text">Приключения</span>
+                                <span class="filter-option__count">(156)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="sports">
+                                <span class="filter-option__text">Спорт</span>
+                                <span class="filter-option__count">(45)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="simulator">
+                                <span class="filter-option__text">Симуляторы</span>
+                                <span class="filter-option__count">(78)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="horror">
+                                <span class="filter-option__text">Хоррор</span>
+                                <span class="filter-option__count">(34)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="genre" value="indie">
+                                <span class="filter-option__text">Инди</span>
+                                <span class="filter-option__count">(212)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Price -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Цена</h4>
+                        <div class="price-range">
+                            <div class="price-range__values">
+                                <span class="price-range__min">0 ₽</span>
+                                <span class="price-range__max">10,000 ₽</span>
+                            </div>
+                            <input type="range" class="price-range__slider" min="0" max="10000" value="10000" id="price-slider">
+                            <div class="price-range__selected">До: <span id="selected-price">10,000 ₽</span></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Platform -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Платформа</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="platform" value="pc">
+                                <span class="filter-option__text">PC</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="platform" value="playstation">
+                                <span class="filter-option__text">PlayStation</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="platform" value="xbox">
+                                <span class="filter-option__text">Xbox</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="platform" value="nintendo">
+                                <span class="filter-option__text">Nintendo</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Rating -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Рейтинг</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="5">
+                                <span class="filter-option__text">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    5 звезд
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="4">
+                                <span class="filter-option__text">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    4+ звезды
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="3">
+                                <span class="filter-option__text">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    3+ звезды
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn--primary filter-apply">Применить фильтры</button>
+                        <button class="btn btn--secondary filter-reset">Сбросить</button>
+                    </div>
+                </aside>
+
+                <!-- Games Grid -->
+                <div class="catalog-main">
+                    <!-- Catalog Controls -->
+                    <div class="catalog-controls">
+                        <div class="catalog-controls__left">
+                            <button class="btn btn--secondary" id="filter-toggle">
+                                <i class="fas fa-filter"></i> Фильтры
+                            </button>
+                            <div class="catalog-sort">
+                                <label for="sort-select" class="catalog-sort__label">Сортировка:</label>
+                                <select id="sort-select" class="catalog-sort__select">
+                                    <option value="popular">По популярности</option>
+                                    <option value="price-asc">По цене (возрастание)</option>
+                                    <option value="price-desc">По цене (убывание)</option>
+                                    <option value="rating">По рейтингу</option>
+                                    <option value="new">По новизне</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog-controls__right">
+                            <div class="catalog-view">
+                                <button class="catalog-view__btn catalog-view__btn--active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="catalog-view__btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Games Grid -->
+                    <div class="games-grid" id="games-grid">
+                        <!-- Game cards will be loaded here -->
+                        <!-- This content would normally come from a database -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="catalog-pagination">
+                        <button class="pagination-btn pagination-btn--prev" disabled>
+                            <i class="fas fa-chevron-left"></i> Назад
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="pagination-number pagination-number--active">1</button>
+                            <button class="pagination-number">2</button>
+                            <button class="pagination-number">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-number">10</button>
+                        </div>
+                        <button class="pagination-btn pagination-btn--next">
+                            Далее <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <i class="fas fa-phone"></i>
+                            <span>8-800-999-55-99</span>
+                        </li>
+                        <li class="footer__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>best@games.ru</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="index.html">Главная</a></li>
+                        <li class="footer__item"><a href="register.html">Регистрация</a></li>
+                        <li class="footer__item"><a href="login.html">Авторизация</a></li>
+                        <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024 BestGames. Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-home"></i> Главная</a></li>
+                    <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+                    <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+                    <li class="mobile-nav__item"><a href="profile.html" class="mobile-nav__link"><i class="fas fa-user-circle"></i> Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Дополнительный скрипт для каталога
+        document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация каталога
+            const gamesData = [
+                {
+                    id: 1,
+                    title: "The Witcher 3: Wild Hunt",
+                    genre: "RPG",
+                    developer: "CD Projekt Red",
+                    price: 1299,
+                    rating: 4.5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 2,
+                    title: "Cyberpunk 2077",
+                    genre: "RPG",
+                    developer: "CD Projekt Red",
+                    price: 1999,
+                    rating: 4,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 3,
+                    title: "Baldur's Gate 3",
+                    genre: "RPG",
+                    developer: "Larian Studios",
+                    price: 3599,
+                    rating: 5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 4,
+                    title: "Call of Duty: Modern Warfare III",
+                    genre: "Шутер",
+                    developer: "Infinity Ward",
+                    price: 3999,
+                    rating: 4,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 5,
+                    title: "EA Sports FC 24",
+                    genre: "Спорт",
+                    developer: "EA Sports",
+                    price: 4499,
+                    rating: 3.5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 6,
+                    title: "Diablo IV",
+                    genre: "RPG",
+                    developer: "Blizzard",
+                    price: 5299,
+                    rating: 4,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 7,
+                    title: "Resident Evil 4 Remake",
+                    genre: "Хоррор",
+                    developer: "Capcom",
+                    price: 3799,
+                    rating: 5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 8,
+                    title: "Starfield",
+                    genre: "RPG",
+                    developer: "Bethesda",
+                    price: 4299,
+                    rating: 4,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 9,
+                    title: "Hogwarts Legacy",
+                    genre: "Приключение",
+                    developer: "Avalanche Software",
+                    price: 3499,
+                    rating: 4.5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 10,
+                    title: "Minecraft",
+                    genre: "Песочница",
+                    developer: "Mojang",
+                    price: 1999,
+                    rating: 4.5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 11,
+                    title: "Grand Theft Auto V",
+                    genre: "Приключение",
+                    developer: "Rockstar Games",
+                    price: 1499,
+                    rating: 5,
+                    imageUrl: "img/factorio.jpeg"
+                },
+                {
+                    id: 12,
+                    title: "Red Dead Redemption 2",
+                    genre: "Приключение",
+                    developer: "Rockstar Games",
+                    price: 2499,
+                    rating: 5,
+                    imageUrl: "img/factorio.jpeg"
+                }
+            ];
+            
+            const gamesGrid = document.getElementById('games-grid');
+            
+            // Функция для отрисовки карточек игр
+            function renderGames(games, viewMode = 'grid') {
+                gamesGrid.innerHTML = '';
+                gamesGrid.className = `games-grid ${viewMode}-view`;
+                
+                games.forEach(game => {
+                    const ratingStars = getRatingStars(game.rating);
+                    
+                    const gameCard = document.createElement('a');
+                    gameCard.href = '#';
+                    gameCard.className = 'game-card';
+                    
+                    gameCard.innerHTML = `
+                        <div class="game-card__image">
+                            <img src="${game.imageUrl}" alt="Ведьмак 3">
+                        </div>
+                        <div class="game-card__content">
+                            <h3 class="game-card__title">${game.title}</h3>
+                            <div class="game-card__info">
+                                <span class="game-card__genre">${game.genre}</span>
+                                <span class="game-card__developer">${game.developer}</span>
+                            </div>
+                            <div class="game-card__rating">
+                                ${ratingStars}
+                            </div>
+                            <div class="game-card__footer">
+                                <div class="game-card__price">${game.price.toLocaleString('ru-RU')} ₽</div>
+                                <span class="game-card__link">Подробнее</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    gamesGrid.appendChild(gameCard);
+                });
+            }
+            
+            // Функция для получения звезд рейтинга
+            function getRatingStars(rating) {
+                let stars = '';
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                
+                for (let i = 0; i < fullStars; i++) {
+                    stars += '<i class="fas fa-star"></i>';
+                }
+                
+                if (hasHalfStar) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                    stars += '<i class="far fa-star"></i>';
+                }
+                
+                return stars;
+            }
+            
+            // Инициализация отображения игр
+            renderGames(gamesData, 'grid');
+            
+            // Переключение вида (сетка/список)
+            const viewButtons = document.querySelectorAll('.catalog-view__btn');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    viewButtons.forEach(btn => btn.classList.remove('catalog-view__btn--active'));
+                    this.classList.add('catalog-view__btn--active');
+                    
+                    const viewMode = this.getAttribute('data-view');
+                    renderGames(gamesData, viewMode);
+                });
+            });
+            
+            // Открытие/закрытие фильтров на мобильных
+            const filterToggle = document.getElementById('filter-toggle');
+            const sidebar = document.getElementById('catalog-sidebar');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (filterToggle) {
+                filterToggle.addEventListener('click', function() {
+                    sidebar.classList.add('catalog-sidebar--active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', function() {
+                    sidebar.classList.remove('catalog-sidebar--active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            // Закрытие сайдбара при клике вне его
+            sidebar.addEventListener('click', function(e) {
+                if (e.target === sidebar) {
+                    sidebar.classList.remove('catalog-sidebar--active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Обработка слайдера цены
+            const priceSlider = document.getElementById('price-slider');
+            const selectedPrice = document.getElementById('selected-price');
+            
+            if (priceSlider && selectedPrice) {
+                priceSlider.addEventListener('input', function() {
+                    const value = parseInt(this.value);
+                    selectedPrice.textContent = value.toLocaleString('ru-RU') + ' ₽';
+                });
+            }
+            
+            // Применение фильтров
+            const applyFilterBtn = document.querySelector('.filter-apply');
+            const resetFilterBtn = document.querySelector('.filter-reset');
+            
+            if (applyFilterBtn) {
+                applyFilterBtn.addEventListener('click', function() {
+                    // Получение значений фильтров
+                    const selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked'))
+                        .map(cb => cb.value);
+                    
+                    const selectedPlatforms = Array.from(document.querySelectorAll('input[name="platform"]:checked'))
+                        .map(cb => cb.value);
+                    
+                    const selectedRatings = Array.from(document.querySelectorAll('input[name="rating"]:checked'))
+                        .map(cb => parseInt(cb.value));
+                    
+                    const maxPrice = parseInt(priceSlider.value);
+                    
+                    // Фильтрация игр
+                    let filteredGames = gamesData.filter(game => {
+                        // Фильтр по цене
+                        if (game.price > maxPrice) return false;
+                        
+                        // Фильтр по жанру
+                        if (selectedGenres.length > 0) {
+                            // Здесь должна быть логика соответствия жанров
+                            // Для демонстрации просто пропускаем
+                        }
+                        
+                        // Фильтр по рейтингу
+                        if (selectedRatings.length > 0) {
+                            const gameRating = Math.floor(game.rating);
+                            if (!selectedRatings.includes(gameRating) && 
+                                !(gameRating === 4 && selectedRatings.includes(5))) {
+                                return false;
+                            }
+                        }
+                        
+                        return true;
+                    });
+                    
+                    // Применение сортировки
+                    const sortSelect = document.getElementById('sort-select');
+                    const sortValue = sortSelect.value;
+                    
+                    switch (sortValue) {
+                        case 'price-asc':
+                            filteredGames.sort((a, b) => a.price - b.price);
+                            break;
+                        case 'price-desc':
+                            filteredGames.sort((a, b) => b.price - a.price);
+                            break;
+                        case 'rating':
+                            filteredGames.sort((a, b) => b.rating - a.rating);
+                            break;
+                        case 'new':
+                            // Для демонстрации - сортируем по ID
+                            filteredGames.sort((a, b) => b.id - a.id);
+                            break;
+                        default:
+                            // По популярности (по умолчанию)
+                            filteredGames.sort((a, b) => b.rating - a.rating);
+                    }
+                    
+                    // Получение текущего режима отображения
+                    const currentView = document.querySelector('.catalog-view__btn--active').getAttribute('data-view');
+                    
+                    // Отображение отфильтрованных игр
+                    renderGames(filteredGames, currentView);
+                    
+                    // Закрытие сайдбара на мобильных
+                    if (window.innerWidth <= 1023) {
+                        sidebar.classList.remove('catalog-sidebar--active');
+                        document.body.style.overflow = '';
+                    }
+                    
+                    // Показ сообщения о количестве найденных игр
+                    alert(`Найдено игр: ${filteredGames.length}`);
+                });
+            }
+            
+            // Сброс фильтров
+            if (resetFilterBtn) {
+                resetFilterBtn.addEventListener('click', function() {
+                    // Сброс чекбоксов
+                    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                        cb.checked = false;
+                    });
+                    
+                    // Сброс слайдера цены
+                    if (priceSlider) {
+                        priceSlider.value = 10000;
+                        if (selectedPrice) {
+                            selectedPrice.textContent = '10,000 ₽';
+                        }
+                    }
+                    
+                    // Сброс селекта сортировки
+                    const sortSelect = document.getElementById('sort-select');
+                    if (sortSelect) {
+                        sortSelect.value = 'popular';
+                    }
+                    
+                    // Возврат к исходным данным
+                    const currentView = document.querySelector('.catalog-view__btn--active').getAttribute('data-view');
+                    renderGames(gamesData, currentView);
+                });
+            }
+            
+            // Поиск на мобильных
+            const searchToggle = document.getElementById('mobile-search-toggle');
+            const mobileSearch = document.getElementById('mobile-search');
+            
+            if (searchToggle && mobileSearch) {
+                let searchVisible = false;
+                
+                searchToggle.addEventListener('click', function() {
+                    searchVisible = !searchVisible;
+                    mobileSearch.style.display = searchVisible ? 'flex' : 'none';
+                });
+            }
+            
+            // Обработка сортировки
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    // Получение текущих отфильтрованных игр
+                    let currentGames = gamesData; // В реальном приложении здесь был бы текущий фильтр
+                    
+                    // Применение сортировки
+                    switch (this.value) {
+                        case 'price-asc':
+                            currentGames.sort((a, b) => a.price - b.price);
+                            break;
+                        case 'price-desc':
+                            currentGames.sort((a, b) => b.price - a.price);
+                            break;
+                        case 'rating':
+                            currentGames.sort((a, b) => b.rating - a.rating);
+                            break;
+                        case 'new':
+                            currentGames.sort((a, b) => b.id - a.id);
+                            break;
+                    }
+                    
+                    const currentView = document.querySelector('.catalog-view__btn--active').getAttribute('data-view');
+                    renderGames(currentGames, currentView);
+                });
+            }
+            
+            // Пагинация
+            const paginationNumbers = document.querySelectorAll('.pagination-number');
+            const prevBtn = document.querySelector('.pagination-btn--prev');
+            const nextBtn = document.querySelector('.pagination-btn--next');
+            
+            paginationNumbers.forEach(number => {
+                number.addEventListener('click', function() {
+                    paginationNumbers.forEach(n => n.classList.remove('pagination-number--active'));
+                    this.classList.add('pagination-number--active');
+                    
+                    // Здесь должна быть логика загрузки соответствующей страницы
+                    // Для демонстрации просто показываем сообщение
+                    const pageNum = this.textContent;
+                    console.log(`Загрузка страницы ${pageNum}`);
+                });
+            });
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    // Логика перехода на предыдущую страницу
+                    console.log('Переход на предыдущую страницу');
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    // Логика перехода на следующую страницу
+                    console.log('Переход на следующую страницу');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

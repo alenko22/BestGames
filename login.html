@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт - BestGames</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF" />
+                                <stop offset="100%" stop-color="#FF6584" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
+                    </svg>
+                    <span class="logo__text">BestGames</span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="register.html" class="nav__link nav__link--accent">Регистрация</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <main class="auth-page">
+        <div class="container">
+            <div class="auth-form-wrapper">
+                <div class="auth-form-container">
+                    <h1 class="auth-form__title">Приветствуем вас</h1>
+                    <p class="auth-form__subtitle">Введите данные для входа в ваш аккаунт</p>
+                    
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                            <div class="form-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="form-label">Пароль</label>
+                            <input type="password" id="password" class="form-input" placeholder="Введите пароль" required>
+                            <div class="form-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary auth-form__button">Войти</button>
+                        
+                        <div class="auth-form__links">
+                            <a href="#" class="auth-form__link">Забыли пароль?</a>
+                            <a href="register.html" class="auth-form__link">Нет аккаунта? Зарегистрируйтесь</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <i class="fas fa-phone"></i>
+                            <span>8-800-999-55-99</span>
+                        </li>
+                        <li class="footer__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>best@games.ru</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="index.html">Главная</a></li>
+                        <li class="footer__item"><a href="register.html">Регистрация</a></li>
+                        <li class="footer__item"><a href="login.html">Авторизация</a></li>
+                        <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024 BestGames. Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-home"></i> Главная</a></li>
+                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог</a></li>
+                    <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <style>
+      
+    </style>
+</body>
+</html>

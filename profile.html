@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - BestGames</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF" />
+                                <stop offset="100%" stop-color="#FF6584" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
+                    </svg>
+                    <span class="logo__text">BestGames</span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="index_light.html" class="nav__link">Светлая тема</a></li>
+                        <li class="nav__item"><a href="index.html" class="nav__link nav__link--accent">Выйти</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Page -->
+    <main class="profile-page">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="profile-avatar__image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-avatar__info">
+                        <h1 class="profile-avatar__name">Иван Иванов</h1>
+                        <div class="profile-avatar__email">ivanov@example.com</div>
+                        <div class="profile-avatar__member">Участник с 15.03.2023</div>
+                    </div>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <div class="profile-stat__value">24</div>
+                        <div class="profile-stat__label">Игры</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat__value">8,950 ₽</div>
+                        <div class="profile-stat__label">Потрачено</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat__value">12</div>
+                        <div class="profile-stat__label">Друзей</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <!-- User Information -->
+                <section class="profile-section">
+                    <h2 class="profile-section__title">Ваши данные</h2>
+                    <div class="profile-info">
+                        <div class="profile-info__item">
+                            <div class="profile-info__label">E-mail</div>
+                            <div class="profile-info__value">ivanov@example.com</div>
+                        </div>
+                        <div class="profile-info__item">
+                            <div class="profile-info__label">Фамилия</div>
+                            <div class="profile-info__value">Иванов</div>
+                        </div>
+                        <div class="profile-info__item">
+                            <div class="profile-info__label">Имя</div>
+                            <div class="profile-info__value">Иван</div>
+                        </div>
+                        <div class="profile-info__item">
+                            <div class="profile-info__label">Дата рождения</div>
+                            <div class="profile-info__value">15.05.1995</div>
+                        </div>
+                        <div class="profile-info__item">
+                            <div class="profile-info__label">Номер телефона</div>
+                            <div class="profile-info__value">+7 (999) 123-45-67</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Purchase History -->
+                <section class="profile-section">
+                    <h2 class="profile-section__title">Вы покупали:</h2>
+                    <div class="purchases">
+                        <div class="purchase">
+                            <div class="purchase__date">15.03.2024</div>
+                            <div class="purchase__name">Cyberpunk 2077: Phantom Liberty</div>
+                            <div class="purchase__price">2,499 ₽</div>
+                            <div class="purchase__status">
+                                <span class="purchase__status-badge purchase__status-badge--completed">Завершено</span>
+                            </div>
+                        </div>
+                        
+                        <div class="purchase">
+                            <div class="purchase__date">10.03.2024</div>
+                            <div class="purchase__name">Baldur's Gate 3</div>
+                            <div class="purchase__price">3,599 ₽</div>
+                            <div class="purchase__status">
+                                <span class="purchase__status-badge purchase__status-badge--completed">Завершено</span>
+                            </div>
+                        </div>
+                        
+                        <div class="purchase">
+                            <div class="purchase__date">05.03.2024</div>
+                            <div class="purchase__name">Комплект внутриигровых предметов "Эпический набор" для Dota 2</div>
+                            <div class="purchase__price">799 ₽</div>
+                            <div class="purchase__status">
+                                <span class="purchase__status-badge purchase__status-badge--completed">Завершено</span>
+                            </div>
+                        </div>
+                        
+                        <div class="purchase">
+                            <div class="purchase__date">28.02.2024</div>
+                            <div class="purchase__name">EA Sports FC 24</div>
+                            <div class="purchase__price">4,499 ₽</div>
+                            <div class="purchase__status">
+                                <span class="purchase__status-badge purchase__status-badge--completed">Завершено</span>
+                            </div>
+                        </div>
+                        
+                        <div class="purchase">
+                            <div class="purchase__date">20.02.2024</div>
+                            <div class="purchase__name">Starfield</div>
+                            <div class="purchase__price">4,299 ₽</div>
+                            <div class="purchase__status">
+                                <span class="purchase__status-badge purchase__status-badge--completed">Завершено</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section__footer">
+                        <a href="#" class="btn btn--secondary">Показать все покупки</a>
+                    </div>
+                </section>
+
+                <!-- Profile Settings -->
+                <section class="profile-section">
+                    <h2 class="profile-section__title">Настройки профиля</h2>
+                    <div class="profile-settings">
+                        <div class="profile-setting">
+                            <div class="profile-setting__info">
+                                <h3 class="profile-setting__title">Смена пароля</h3>
+                                <p class="profile-setting__description">Обновите пароль для вашего аккаунта</p>
+                            </div>
+                            <button class="btn btn--secondary" id="change-password-btn">Сменить пароль</button>
+                        </div>
+                        
+                        <div class="profile-setting">
+                            <div class="profile-setting__info">
+                                <h3 class="profile-setting__title">Тема оформления</h3>
+                                <p class="profile-setting__description">Выберите предпочтительную тему для интерфейса</p>
+                            </div>
+                            <div class="theme-switch">
+                                <button class="theme-switch__option theme-switch__option--active" data-theme="dark">
+                                    <i class="fas fa-moon"></i> Темная
+                                </button>
+                                <a href="index_light.html" class="theme-switch__option" data-theme="light">
+                                    <i class="fas fa-sun"></i> Светлая
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-setting">
+                            <div class="profile-setting__info">
+                                <h3 class="profile-setting__title">Уведомления</h3>
+                                <p class="profile-setting__description">Управление email и push уведомлениями</p>
+                            </div>
+                            <button class="btn btn--secondary">Настроить</button>
+                        </div>
+                        
+                        <div class="profile-setting">
+                            <div class="profile-setting__info">
+                                <h3 class="profile-setting__title">Двухфакторная аутентификация</h3>
+                                <p class="profile-setting__description">Дополнительная защита вашего аккаунта</p>
+                            </div>
+                            <button class="btn btn--secondary">Включить</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <i class="fas fa-phone"></i>
+                            <span>8-800-999-55-99</span>
+                        </li>
+                        <li class="footer__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>best@games.ru</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="index.html">Главная</a></li>
+                        <li class="footer__item"><a href="register.html">Регистрация</a></li>
+                        <li class="footer__item"><a href="login.html">Авторизация</a></li>
+                        <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024 BestGames. Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-home"></i> Главная</a></li>
+                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог</a></li>
+                    <li class="mobile-nav__item"><a href="index_light.html" class="mobile-nav__link"><i class="fas fa-sun"></i> Светлая тема</a></li>
+                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal" id="change-password-modal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 class="modal__title">Смена пароля</h3>
+                <button class="modal__close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal__body">
+                <form class="password-form">
+                    <div class="form-group">
+                        <label for="current-password" class="form-label">Текущий пароль</label>
+                        <input type="password" id="current-password" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password" class="form-label">Новый пароль</label>
+                        <input type="password" id="new-password" class="form-input" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password" class="form-label">Подтвердите новый пароль</label>
+                        <input type="password" id="confirm-new-password" class="form-input" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Сохранить новый пароль</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <style>
+        
+    </style>
+    
+    <script>
+        // Дополнительный скрипт для личного кабинета
+        document.addEventListener('DOMContentLoaded', function() {
+            // Модальное окно смены пароля
+            const changePasswordBtn = document.getElementById('change-password-btn');
+            const changePasswordModal = document.getElementById('change-password-modal');
+            const modalClose = document.querySelector('.modal__close');
+            
+            if (changePasswordBtn) {
+                changePasswordBtn.addEventListener('click', function() {
+                    changePasswordModal.classList.add('modal--active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (modalClose) {
+                modalClose.addEventListener('click', function() {
+                    changePasswordModal.classList.remove('modal--active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            // Закрытие модального окна при клике вне его
+            changePasswordModal.addEventListener('click', function(e) {
+                if (e.target === changePasswordModal) {
+                    changePasswordModal.classList.remove('modal--active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Обработка формы смены пароля
+            const passwordForm = document.querySelector('.password-form');
+            if (passwordForm) {
+                passwordForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const newPassword = document.getElementById('new-password').value;
+                    const confirmPassword = document.getElementById('confirm-new-password').value;
+                    
+                    if (newPassword !== confirmPassword) {
+                        alert('Пароли не совпадают!');
+                        return;
+                    }
+                    
+                    if (newPassword.length < 8) {
+                        alert('Пароль должен содержать минимум 8 символов!');
+                        return;
+                    }
+                    
+                    // Здесь должна быть логика отправки данных на сервер
+                    alert('Пароль успешно изменен!');
+                    changePasswordModal.classList.remove('modal--active');
+                    document.body.style.overflow = '';
+                    passwordForm.reset();
+                });
+            }
+            
+            // Переключение темы в профиле
+            const themeOptions = document.querySelectorAll('.theme-switch__option');
+            themeOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    if (!this.classList.contains('theme-switch__option--active')) {
+                        themeOptions.forEach(opt => {
+                            opt.classList.remove('theme-switch__option--active');
+                        });
+                        this.classList.add('theme-switch__option--active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

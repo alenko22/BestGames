@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - BestGames</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF" />
+                                <stop offset="100%" stop-color="#FF6584" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
+                    </svg>
+                    <span class="logo__text">BestGames</span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="login.html" class="nav__link">Войти</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <main class="auth-page">
+        <div class="container">
+            <div class="auth-form-wrapper">
+                <div class="auth-form-container">
+                    <h1 class="auth-form__title">Добро пожаловать</h1>
+                    <p class="auth-form__subtitle">Станьте частью нашего клуба</p>
+                    
+                    <form class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                                <div class="form-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lastname" class="form-label">Фамилия *</label>
+                                <input type="text" id="lastname" class="form-input" placeholder="Иванов" required>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="firstname" class="form-label">Имя *</label>
+                                <input type="text" id="firstname" class="form-input" placeholder="Иван" required>
+                                <div class="form-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthdate" class="form-label">Дата рождения *</label>
+                            <input type="date" id="birthdate" class="form-input" required>
+                            <div class="form-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Номер телефона *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                            <div class="form-error"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password" class="form-label">Пароль *</label>
+                                <input type="password" id="password" class="form-input" placeholder="Минимум 8 символов" required minlength="8">
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm-password" class="form-label">Повтор пароля *</label>
+                                <input type="password" id="confirm-password" class="form-input" placeholder="Повторите пароль" required>
+                                <div class="form-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group form-group--checkbox">
+                            <input type="checkbox" id="agreement" required>
+                            <label for="agreement" class="form-label">
+                                Я согласен на обработку персональных данных и принимаю условия пользовательского соглашения *
+                            </label>
+                            <div class="form-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary auth-form__button">Зарегистрироваться</button>
+                        
+                        <div class="auth-form__links">
+                            <a href="login.html" class="auth-form__link">Уже есть аккаунт? Войти</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="auth-info">
+                    <h2 class="auth-info__title">Преимущества для вас</h2>
+                    <ul class="auth-info__list">
+                        <li class="auth-info__item">
+                            <i class="fas fa-percent"></i>
+                            <span>Специальные скидки</span>
+                        </li>
+                        <li class="auth-info__item">
+                            <i class="fas fa-history"></i>
+                            <span>История покупок и список желаемого</span>
+                        </li>
+                        <li class="auth-info__item">
+                            <i class="fas fa-headset"></i>
+                            <span>Приоритетная техническая поддержка</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <i class="fas fa-phone"></i>
+                            <span>8-800-999-55-99</span>
+                        </li>
+                        <li class="footer__item">
+                            <i class="fas fa-envelope"></i>
+                            <span>best@games.ru</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="index.html">Главная</a></li>
+                        <li class="footer__item"><a href="register.html">Регистрация</a></li>
+                        <li class="footer__item"><a href="login.html">Авторизация</a></li>
+                        <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">© 2024 BestGames. Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-home"></i> Главная</a></li>
+                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог</a></li>
+                    <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
