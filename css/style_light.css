@@ -1,22 +1,30 @@
-/* Светлая тема - переопределение переменных */
+/* ===== СВЕТЛАЯ ТЕМА - ГЕОМЕТРИЧЕСКИЙ СТИЛЬ, 3 ЦВЕТА ===== */
+
 :root {
+    /* Цветовая палитра */
+    --color-gold: #d1bc8a;
+    --color-gold-muted: #a8976e;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
     /* Светлая тема */
-    --bg-primary: #ffffff;
+    --bg-primary: var(--color-white);
     --bg-secondary: #f5f5f5;
     --bg-tertiary: #eeeeee;
-    --text-primary: #121212;
-    --text-secondary: #666666;
-    --text-tertiary: #888888;
-    --accent-primary: #6C63FF;
-    --accent-secondary: #FF6584;
+    --text-primary: var(--color-black);
+    --text-secondary: #333333;
+    --text-tertiary: #666666;
+    --accent-primary: var(--color-gold);
+    --accent-secondary: var(--color-gold-muted);
     --border-color: #dddddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    --gradient: var(--color-gold);
 }
 
-/* Специфические стили для светлой темы */
+/* Коррекция для светлой темы */
 .header {
-    box-shadow: 0 2px 20px var(--shadow-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .search__input {
@@ -24,40 +32,55 @@
     border-color: var(--border-color);
 }
 
+.search__input:focus {
+    border-color: var(--accent-primary);
+}
+
 .game-card {
     background: var(--bg-primary);
-    box-shadow: 0 4px 20px var(--shadow-color);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .game-card:hover {
-    box-shadow: 0 20px 40px var(--shadow-color);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .advantage-card, .partner-card {
     background: var(--bg-secondary);
-    box-shadow: 0 4px 20px var(--shadow-color);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.advantage-card:hover, .partner-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .mobile-menu__content {
     background: var(--bg-primary);
+    border-left: 2px solid var(--accent-primary);
 }
 
 /* Коррекция для светлой темы */
 .slider__arrow {
     background: var(--bg-primary);
     color: var(--text-primary);
-    box-shadow: 0 4px 15px var(--shadow-color);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .slider__arrow:hover {
     background: var(--accent-primary);
-    color: white;
+    border-color: var(--accent-primary);
+    color: var(--color-black);
 }
 
 .search__suggestions {
     background: var(--bg-primary);
     border-color: var(--border-color);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 .theme-toggle {
@@ -66,4 +89,98 @@
 
 .theme-toggle:hover {
     color: var(--accent-primary);
+}
+
+/* Кнопки в светлой теме */
+.btn--primary {
+    color: var(--color-black);
+}
+
+.btn--secondary {
+    color: var(--accent-primary);
+}
+
+.btn--secondary:hover {
+    color: var(--color-black);
+}
+
+/* Формы в светлой теме */
+.form-input {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.form-input:focus {
+    border-color: var(--accent-primary);
+}
+
+/* Таблицы в светлой теме */
+.admin-table th {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.admin-table tr:hover {
+    background: rgba(209, 188, 138, 0.1);
+}
+
+/* Карточки профиля в светлой теме */
+.profile-avatar__image {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.profile-info__item {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+.purchase {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+.purchase:hover {
+    border-color: var(--accent-primary);
+}
+
+.profile-setting {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+/* Модальные окна в светлой теме */
+.modal__content {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+}
+
+.modal__header {
+    background: var(--bg-primary);
+}
+
+/* Адаптивность для светлой темы */
+@media (max-width: 767px) {
+    .catalog-mobile-search {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .catalog-sidebar {
+        background: var(--bg-primary);
+    }
+    
+    .admin-tab-content {
+        background: var(--bg-secondary);
+    }
+    
+    .auth-form-container, .auth-info {
+        background: var(--bg-secondary);
+    }
+    
+    .profile-header, .profile-section {
+        background: var(--bg-secondary);
+    }
 }

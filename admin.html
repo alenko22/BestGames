@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/icon.svg">
 </head>
 <body>
     <!-- Header -->
@@ -17,16 +18,6 @@
             <div class="header__inner">
                 <!-- Logo -->
                 <a href="index.html" class="logo">
-                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
-                        <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#6C63FF" />
-                                <stop offset="100%" stop-color="#FF6584" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
-                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
-                    </svg>
                     <span class="logo__text">BestGames</span>
                 </a>
 
@@ -315,11 +306,11 @@
                     <h3 class="footer__title">Контакты</h3>
                     <ul class="footer__list">
                         <li class="footer__item">
-                            <i class="fas fa-phone"></i>
+                            <span>Телефон: </span>
                             <span>8-800-999-55-99</span>
                         </li>
                         <li class="footer__item">
-                            <i class="fas fa-envelope"></i>
+                            <span>Почта: </span>
                             <span>best@games.ru</span>
                         </li>
                     </ul>
@@ -383,242 +374,25 @@
     <script src="script.js"></script>
     
     <script>
-        // Дополнительный скрипт для админ панели
-        document.addEventListener('DOMContentLoaded', function() {
-            // Переключение вкладок
-            const tabs = document.querySelectorAll('.admin-tab');
-            const tabPanes = document.querySelectorAll('.tab-pane');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
-                    
-                    // Удаляем активный класс со всех вкладок
-                    tabs.forEach(t => t.classList.remove('admin-tab--active'));
-                    tabPanes.forEach(p => p.classList.remove('tab-pane--active'));
-                    
-                    // Добавляем активный класс к текущей вкладке
-                    this.classList.add('admin-tab--active');
-                    
-                    // Показываем соответствующую панель
-                    document.getElementById(tabId).classList.add('tab-pane--active');
-                });
+        // Переключение вкладок
+        const tabs = document.querySelectorAll('.admin-tab');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Удаляем активный класс со всех вкладок
+                tabs.forEach(t => t.classList.remove('admin-tab--active'));
+                tabPanes.forEach(p => p.classList.remove('tab-pane--active'));
+                
+                // Добавляем активный класс к текущей вкладке
+                this.classList.add('admin-tab--active');
+                
+                // Показываем соответствующую панель
+                document.getElementById(tabId).classList.add('tab-pane--active');
             });
-            
-            // Загрузка файлов
-            const fileInput = document.getElementById('game-image');
-            const fileUploadArea = document.getElementById('file-upload-area');
-            const filePreview = document.getElementById('file-preview');
-            
-            if (fileInput && fileUploadArea) {
-                // Клик по области загрузки
-                fileUploadArea.addEventListener('click', function() {
-                    fileInput.click();
-                });
-                
-                // Перетаскивание файла
-                fileUploadArea.addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                    this.style.borderColor = 'var(--accent-primary)';
-                    this.style.background = 'rgba(108, 99, 255, 0.05)';
-                });
-                
-                fileUploadArea.addEventListener('dragleave', function(e) {
-                    e.preventDefault();
-                    this.style.borderColor = 'var(--border-color)';
-                    this.style.background = '';
-                });
-                
-                fileUploadArea.addEventListener('drop', function(e) {
-                    e.preventDefault();
-                    this.style.borderColor = 'var(--border-color)';
-                    this.style.background = '';
-                    
-                    if (e.dataTransfer.files.length) {
-                        fileInput.files = e.dataTransfer.files;
-                        handleFileSelect(e.dataTransfer.files[0]);
-                    }
-                });
-                
-                // Выбор файла через диалог
-                fileInput.addEventListener('change', function(e) {
-                    if (this.files.length) {
-                        handleFileSelect(this.files[0]);
-                    }
-                });
-            }
-            
-            function handleFileSelect(file) {
-                // Проверка типа файла
-                const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
-                if (!validTypes.includes(file.type)) {
-                    alert('Пожалуйста, выберите изображение в формате JPG, PNG или GIF');
-                    return;
-                }
-                
-                // Проверка размера файла (5MB)
-                if (file.size > 5 * 1024 * 1024) {
-                    alert('Размер файла не должен превышать 5MB');
-                    return;
-                }
-                
-                // Создание превью
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    filePreview.innerHTML = `
-                        <div class="file-preview__image">
-                            <img src="${e.target.result}" alt="Превью изображения">
-                        </div>
-                        <div class="file-preview__info">
-                            ${file.name} (${(file.size / 1024).toFixed(1)} KB)
-                        </div>
-                    `;
-                    filePreview.classList.add('file-preview--visible');
-                };
-                reader.readAsDataURL(file);
-            }
-            
-            // Обработка формы добавления игры
-            const addGameForm = document.getElementById('add-game-form');
-            const successModal = document.getElementById('success-modal');
-            const closeModalBtn = document.querySelector('.modal__close');
-            const closeSuccessModalBtn = document.getElementById('close-success-modal');
-            
-            if (addGameForm) {
-                addGameForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Валидация формы
-                    let isValid = true;
-                    const requiredFields = this.querySelectorAll('[required]');
-                    
-                    requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
-                            isValid = false;
-                            field.style.borderColor = '#ff3860';
-                            const errorDiv = field.nextElementSibling;
-                            if (errorDiv && errorDiv.classList.contains('form-error')) {
-                                errorDiv.textContent = 'Это поле обязательно для заполнения';
-                            }
-                        } else {
-                            field.style.borderColor = '';
-                            const errorDiv = field.nextElementSibling;
-                            if (errorDiv && errorDiv.classList.contains('form-error')) {
-                                errorDiv.textContent = '';
-                            }
-                        }
-                    });
-                    
-                    // Проверка загрузки файла
-                    if (!fileInput.files.length) {
-                        isValid = false;
-                        fileUploadArea.style.borderColor = '#ff3860';
-                        const errorDiv = fileInput.parentElement.nextElementSibling;
-                        if (errorDiv && errorDiv.classList.contains('form-error')) {
-                            errorDiv.textContent = 'Пожалуйста, выберите изображение';
-                        }
-                    }
-                    
-                    if (!isValid) {
-                        alert('Пожалуйста, заполните все обязательные поля корректно');
-                        return;
-                    }
-                    
-                    // Здесь должна быть логика отправки данных на сервер
-                    // Для демонстрации просто показываем модальное окно успеха
-                    
-                    // Показ модального окна успеха
-                    successModal.classList.add('modal--active');
-                    document.body.style.overflow = 'hidden';
-                    
-                    // Сброс формы
-                    setTimeout(() => {
-                        addGameForm.reset();
-                        filePreview.classList.remove('file-preview--visible');
-                        filePreview.innerHTML = '';
-                    }, 1000);
-                });
-            }
-            
-            // Закрытие модального окна
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', function() {
-                    successModal.classList.remove('modal--active');
-                    document.body.style.overflow = '';
-                });
-            }
-            
-            if (closeSuccessModalBtn) {
-                closeSuccessModalBtn.addEventListener('click', function() {
-                    successModal.classList.remove('modal--active');
-                    document.body.style.overflow = '';
-                });
-            }
-            
-            // Закрытие модального окна при клике вне его
-            if (successModal) {
-                successModal.addEventListener('click', function(e) {
-                    if (e.target === successModal) {
-                        successModal.classList.remove('modal--active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-            
-            // Удаление игр из таблицы
-            const deleteButtons = document.querySelectorAll('.btn-action--delete');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const row = this.closest('tr');
-                    const gameName = row.querySelector('td:nth-child(2)').textContent;
-                    
-                    if (confirm(`Вы уверены, что хотите удалить игру "${gameName}"?`)) {
-                        // Здесь должна быть логика удаления игры с сервера
-                        row.remove();
-                        
-                        // Обновление счетчика игр
-                        const gamesCountElement = document.getElementById('games-count');
-                        if (gamesCountElement) {
-                            const currentCount = parseInt(gamesCountElement.textContent);
-                            gamesCountElement.textContent = currentCount - 1;
-                        }
-                        
-                        alert(`Игра "${gameName}" была удалена`);
-                    }
-                });
-            });
-            
-            // Редактирование игр
-            const editButtons = document.querySelectorAll('.btn-action--edit');
-            editButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const row = this.closest('tr');
-                    const gameName = row.querySelector('td:nth-child(2)').textContent;
-                    
-                    alert(`Редактирование игры "${gameName}" - этот функционал в разработке`);
-                });
-            });
-            
-            // Пагинация таблицы
-            const paginationButtons = document.querySelectorAll('.table-pagination__btn:not(:disabled)');
-            paginationButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    if (!this.classList.contains('table-pagination__btn--active')) {
-                        // Удаляем активный класс со всех кнопок
-                        document.querySelectorAll('.table-pagination__btn').forEach(btn => {
-                            btn.classList.remove('table-pagination__btn--active');
-                        });
-                        
-                        // Добавляем активный класс текущей кнопке
-                        this.classList.add('table-pagination__btn--active');
-                        
-                        // Здесь должна быть логика загрузки соответствующей страницы
-                        const pageNum = this.textContent.trim();
-                        console.log(`Загрузка страницы ${pageNum}`);
-                    }
-                });
-            });
-        });
+        });           
     </script>
 </body>
 </html>

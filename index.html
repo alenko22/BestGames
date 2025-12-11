@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/icon.svg">
 </head>
 <body>
     <!-- Header -->
@@ -17,16 +18,7 @@
             <div class="header__inner">
                 <!-- Logo -->
                 <a href="index.html" class="logo">
-                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40">
-                        <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#6C63FF" />
-                                <stop offset="100%" stop-color="#FF6584" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
-                        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="700">BG</text>
-                    </svg>
+                    <img src="img/icon.svg" alt="Логотип" style="max-width: 50px; max-height: 50px;">
                     <span class="logo__text">BestGames</span>
                 </a>
 
@@ -35,8 +27,7 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#search-section" class="nav__link">Поиск</a></li>
                         <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="login.html" class="nav__link">Войти</a></li>
-                        <li class="nav__item"><a href="register.html" class="nav__link nav__link--accent">Регистрация</a></li>
+                        <li class="nav__item"><a href="login.html" class="nav__link nav__link--accent">Войти</a></li>
                         <li class="nav__item"><a href="profile.html" class="nav__link">Личный кабинет</a></li>
                     </ul>
                 </nav>
@@ -61,10 +52,10 @@
         <div class="slider__container">
             <!-- Slide 1 -->
             <div class="slider__slide slider__slide--active">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Clair Obscur: Expedition 33</h2>
                     <p class="slider__description">Окунитесь в Прекрасную эпоху Франции</p>
-                    <div class="slider__price">1,200 ₽</div>
+                    <div class="slider__price">2,999 ₽</div>
                 </div>
                 <div class="slider__image">
                     <img src="img/clair.jpeg" alt="Факторио" class="slider__image-placeholder">
@@ -73,10 +64,10 @@
 
             <!-- Slide 2 -->
             <div class="slider__slide">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Dispatch</h2>
                     <p class="slider__description">Супергеройская комедия</p>
-                    <div class="slider__price">3,599 ₽</div>
+                    <div class="slider__price">500 ₽</div>
                 </div>
                 <div class="slider__image">
                     <img src="img/dispatch.jpeg" alt="Факторио" class="slider__image-placeholder">
@@ -85,10 +76,10 @@
 
             <!-- Slide 3 -->
             <div class="slider__slide">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Hollow Knight: Silksong</h2>
                     <p class="slider__description">Долгожданная метроидвания от Team Cherry</p>
-                    <div class="slider__price">4,299 ₽</div>
+                    <div class="slider__price">1,999 ₽</div>
                 </div>
                 <div class="slider__image">
                     <img src="img/silksong.jpeg" alt="Факторио" class="slider__image-placeholder">
@@ -158,7 +149,7 @@
             <h2 class="section-title">Поиск по жанрам</h2>
             <div class="search__box">
                 <div class="search__input-wrapper">
-                    <input type="text" class="search__input" placeholder="Введите желаемый жанр">
+                    <input type="search" class="search__input" placeholder="Введите желаемый жанр">
                     <div class="search__suggestions">
                         <div class="search__suggestion">RPG</div>
                         <div class="search__suggestion">Шутер</div>
@@ -180,7 +171,7 @@
             <div class="games__grid">
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/witcher.jpeg" alt="Ведьмак 3">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">The Witcher 3: Wild Hunt</h3>
@@ -204,7 +195,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/COD.jpeg" alt="Ведьмак 3">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Call of Duty: Modern Warfare III</h3>
@@ -221,14 +212,14 @@
                         </div>
                         <div class="game-card__footer">
                             <div class="game-card__price">3,999 ₽</div>
-                            <span class="game-card__link">Подробнее </i></span>
+                            <span class="game-card__link">Подробнее</span>
                         </div>
                     </div>
                 </a>
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/FC_24.jpeg" alt="Ведьмак 3">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">EA Sports FC 24</h3>
@@ -252,7 +243,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/diablo.jpeg" alt="Ведьмак 3">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Diablo IV</h3>
@@ -276,7 +267,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/RE_4.jpeg" alt="Ведьмак 3">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Resident Evil 4 Remake</h3>
@@ -389,11 +380,12 @@
                         <li class="footer__item"><a href="register.html">Регистрация</a></li>
                         <li class="footer__item"><a href="login.html">Авторизация</a></li>
                         <li class="footer__item"><a href="profile.html">Личный кабинет</a></li>
+                        <li class="footer__item"><a href="#search-section">Поиск</a></li>
                     </ul>
-            </nav>
+                </div>
+            </div>
         </div>
-    </div>
-
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

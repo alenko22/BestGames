@@ -21,8 +21,8 @@
     --bg-primary: var(--color-black);
     --bg-secondary: var(--color-black-light);
     --bg-tertiary: var(--color-black-lighter);
-    --text-primary: var(--color-gold);
-    --text-secondary: var(--color-gold-muted);
+    --text-primary: var(--color-white);
+    --text-secondary: #cccc;
     --text-tertiary: var(--color-gold-muted);
     --accent-primary: var(--color-gold);
     --accent-secondary: var(--color-gold-muted);
@@ -265,6 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 .slider__content {
     flex: 1;
     max-width: 600px;
+    margin-left: 50px;
 }
 
 .slider__title {
@@ -298,11 +299,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider__image-placeholder {
-    width: 500px;
+    width: 800px;
     height: 500px;
     border-radius: 0; /* Убраны скругления */
     box-shadow: 0 8px 32px var(--shadow-color);
-    border: 2px solid var(--border-color);
+    border: 2px solid #918b6f;
 }
 
 .slider__indicators {
@@ -383,17 +384,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -1px;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: var(--accent-primary);
-}
-
 .search__box {
     max-width: 600px;
     margin: 0 auto;
@@ -417,8 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .search__input {
     width: 100%;
-    padding: 16px 20px 16px 50px;
-    border-radius: 0; /* Убраны скругления */
+    padding: 16px 20px 16px 16px;
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
@@ -557,6 +546,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .game-card__image {
+    width: 100%;
     height: 200px;
     overflow: hidden;
     position: relative;
@@ -657,7 +647,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0; /* Убраны скругления */
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid var(--border-color);
+    border: 2px solid #918b6f;
 }
 
 .partner-card:hover {
@@ -1052,7 +1042,6 @@ select.form-input {
     background: var(--bg-primary);
     border-radius: 0; /* Убраны скругления */
     outline: none;
-    -webkit-appearance: none;
 }
 
 .price-range__slider::-webkit-slider-thumb {
@@ -1750,7 +1739,6 @@ select.form-input {
 .auth-info {
     background: var(--bg-secondary);
     padding: 40px;
-    border-radius: 0; /* Убраны скругления */
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
 }
@@ -2156,7 +2144,7 @@ select.form-input {
 /* ===== АДАПТИВНОСТЬ ===== */
 
 /* Планшет (768px - 1023px) */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .container {
         padding: 0 15px;
     }
@@ -2170,30 +2158,109 @@ select.form-input {
         display: flex;
     }
     
-    /* Слайдер становится вертикальным */
+    /* Слайдер */
     .slider {
         height: 500px;
+        margin-top: 60px;
     }
-    
+
     .slider__slide {
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 30px 20px;
         text-align: center;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
         background: linear-gradient(to bottom, var(--bg-primary) 30%, transparent 70%);
+        /* Возможно, можно вернуть стандартный padding-bottom, если стрелки теперь не мешают */
+        /* padding-bottom: 120px; */
+        box-sizing: border-box;
     }
-    
+
+    .slider__content.adapt-limit-height {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: flex-start;
+         overflow: hidden;
+         width: 100%;
+         /* Пересчитаем высоту, исключив место под стрелки, которые теперь рядом с индикаторами */
+         /* max-height: calc(500px - 200px - высота_стрелок_и_индикаторов); */
+         /* Давайте просто уберем ограничение, если контент умещается */
+         /* max-height: calc(500px - 200px - 120px); */
+         flex: 0 1 auto;
+     }
+
     .slider__title {
-        font-size: 36px;
+        font-size: 28px;
+        margin-bottom: 10px;
     }
-    
+
+    .slider__description {
+        font-size: 16px;
+        margin-bottom: 15px;
+         max-height: 80px;
+         overflow-y: auto;
+         padding-right: 5px;
+     }
+
+    .slider__price {
+        font-size: 24px; /* Уменьшим размер цены */
+        margin-bottom: 20px;
+    }
+
     .slider__image {
-        display: none;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: -1;
+         max-height: 200px;
+         margin-bottom: 15px;
+     }
+
+    .slider__image-placeholder {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        box-shadow: 0 8px 32px var(--shadow-color);
+        border: 2px solid #918b6f;
     }
-    
-    /* Поиск в одну колонку */
-    .search__box {
-        flex-direction: column;
+
+    /* --- Изменения для стрелок --- */
+    .slider__arrow {
+        position: absolute; /* Оставляем абсолютное позиционирование */
+        /* Убираем предыдущие top, transform */
+        top: auto; /* Отменяем старое позиционирование */
+        bottom: 5px; /* Размещаем стрелки на одном уровне с индикаторами (их bottom обычно 40px) */
+        width: 40px; /* Размер стрелок */
+        height: 40px;
+        z-index: 15; /* Устанавливаем z-index выше, чем у индикаторов (например, 10), но ниже, чем у слайда (например, 20) */
+        /* Оставляем остальные стили: border-radius, background, border, color, font-size, cursor, display, align-items, justify-content, transition */
+    }
+
+    /* Позиционируем левую стрелку слева от индикаторов */
+    .slider__arrow--prev {
+        left: calc(50% - 75px); /* Примерное смещение: половина ширины индикаторов (~60px) + ширина стрелки (40px) / 2 */
+        right: auto;
+    }
+
+    /* Позиционируем правую стрелку справа от индикаторов */
+    .slider__arrow--next {
+        right: calc(50% - 75px); /* Примерное смещение */
+        left: auto;
+    }
+    /* --- Конец изменений для стрелок --- */
+
+
+    .slider__indicators {
+        bottom: 40px; /* Индикаторы остаются на своём месте */
+        z-index: 10; /* Их z-index не изменяем */
+        /* Возможно, стоит немного уменьшить gap между индикаторами */
+        gap: 8px;
     }
     
     /* Преимущества в 2 колонки */
@@ -2359,22 +2426,67 @@ select.form-input {
         font-size: 20px;
     }
     
-    /* Слайдер уменьшается */
     .slider {
         height: 400px;
-        margin-top: 60px;
+        margin-top: 50px;
     }
-    
+
+    .slider__slide {
+        padding: 20px 15px;
+        /* padding-bottom: 110px; - убираем, если стрелки не мешают */
+    }
+
     .slider__title {
-        font-size: 28px;
-    }
-    
-    .slider__description {
-        font-size: 16px;
-    }
-    
-    .slider__price {
         font-size: 24px;
+     }
+
+    .slider__description {
+        font-size: 14px;
+         max-height: 60px;
+         overflow-y: auto;
+         padding-right: 5px;
+     }
+
+    .slider__price {
+        font-size: 20px; /* Еще меньше на мобильных */
+        margin-bottom: 15px; /* Или другой отступ */
+    }
+
+    .slider__image {
+         max-height: 180px;
+     }
+
+    .slider__image-placeholder {
+        max-height: 100%;
+    }
+
+    /* --- Изменения для стрелок на мобильных --- */
+    .slider__arrow {
+        bottom: 5px; /* Корректируем положение на уровне индикаторов */
+        width: 36px; /* Уменьшаем стрелки */
+        height: 36px;
+        z-index: 15; /* Убедимся, что z-index установлен */
+    }
+
+    .slider__arrow--prev {
+        left: calc(50% - 65px); /* Корректируем смещение */
+    }
+
+    .slider__arrow--next {
+        right: calc(50% - 65px); /* Корректируем смещение */
+    }
+    /* --- Конец изменений для стрелок на мобильных --- */
+
+
+    .slider__indicators {
+        bottom: 35px; /* Индикаторы тоже могут быть чуть выше */
+        gap: 6px; /* Уменьшаем gap */
+        z-index: 10;
+    }
+
+    .slider__indicator {
+        width: 10px; /* Уменьшаем индикаторы */
+        height: 10px;
     }
     
     /* Преимущества в одну колонку */
