@@ -67,10 +67,3 @@
 .theme-toggle:hover {
     color: var(--accent-primary);
 }
-
-/* Обновление ссылки на темную тему */
-.theme-toggle::before {
-    content: "\f186"; /* Луна для темной темы */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
