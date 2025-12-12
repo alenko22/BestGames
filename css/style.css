@@ -2536,6 +2536,7 @@ select.form-input {
     
     .catalog-main {
         padding: 20px;
+        width: 95vw;
     }
     
     .games-grid.grid-view {
@@ -2665,9 +2666,6 @@ select.form-input {
     .modal__content {
         max-width: 100%;
     }
-}
-
-@media (max-width: 480px) {
     .games-grid.grid-view {
         grid-template-columns: 1fr;
     }
