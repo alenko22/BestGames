@@ -1,41 +1,32 @@
-// Мобильное меню (общее для всех страниц)
 const burger = document.querySelector('.burger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileMenuClose = document.querySelector('.mobile-menu__close');
-const mobileMenuLinks = document.querySelectorAll('.mobile-nav__link');
+const mobileMenuLinks = document.querySelectorAll('.mobile-nav__link'); // Ссылки в мобильном меню
 
-if (burger && mobileMenu) {
+if (burger && mobileMenu) { // Проверяем, существуют ли элементы перед добавлением обработчиков
     burger.addEventListener('click', function() {
         mobileMenu.classList.add('mobile-menu--active');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
     });
-}
 
-if (mobileMenuClose) {
-    mobileMenuClose.addEventListener('click', function() {
-        mobileMenu.classList.remove('mobile-menu--active');
-        document.body.style.overflow = '';
-    });
-}
-
-if (mobileMenuLinks.length > 0) {
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+    if (mobileMenuClose) { // Проверяем наличие кнопки закрытия
+        mobileMenuClose.addEventListener('click', function() {
             mobileMenu.classList.remove('mobile-menu--active');
-            document.body.style.overflow = '';
+            document.body.style.overflow = ''; // Возвращаем прокрутку
         });
-    });
+    }
+
+    // Закрытие меню при клике на ссылку
+    if (mobileMenuLinks) {
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('mobile-menu--active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 }
 
-// Закрытие меню при клике вне области
-if (mobileMenu) {
-    mobileMenu.addEventListener('click', function(e) {
-        if (e.target === mobileMenu) {
-            mobileMenu.classList.remove('mobile-menu--active');
-            document.body.style.overflow = '';
-        }
-    });
-}
 
 // Слайдер (только для главной страницы)
 const slides = document.querySelectorAll('.slider__slide');
@@ -326,3 +317,267 @@ function getRatingStars(rating) {
     
     return stars;
 }
+
+// Переключение вкладок
+const tabs = document.querySelectorAll('.admin-tab');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab');
+        
+        // Удаляем активный класс со всех вкладок
+        tabs.forEach(t => t.classList.remove('admin-tab--active'));
+        tabPanes.forEach(p => p.classList.remove('tab-pane--active'));
+        
+        // Добавляем активный класс к текущей вкладке
+        this.classList.add('admin-tab--active');
+        
+        // Показываем соответствующую панель
+        document.getElementById(tabId).classList.add('tab-pane--active');
+    });
+});
+
+// Инициализация каталога
+const gamesData = [
+    {
+        id: 1,
+        title: "The Witcher 3: Wild Hunt",
+        genre: "RPG",
+        developer: "CD Projekt Red",
+        price: 1299,
+        rating: 4.5,
+        imageUrl: "img/witcher.jpeg"
+    },
+    {
+        id: 2,
+        title: "Cyberpunk 2077",
+        genre: "RPG",
+        developer: "CD Projekt Red",
+        price: 1999,
+        rating: 4,
+        imageUrl: "img/cyberpunk.jpeg"
+    },
+    {
+        id: 3,
+        title: "Baldur's Gate 3",
+        genre: "RPG",
+        developer: "Larian Studios",
+        price: 3599,
+        rating: 5,
+        imageUrl: "img/bg3.jpeg"
+    },
+    {
+        id: 4,
+        title: "Call of Duty: Modern Warfare III",
+        genre: "Шутер",
+        developer: "Infinity Ward",
+        price: 3999,
+        rating: 4,
+        imageUrl: "img/COD.jpeg"
+    },
+    {
+        id: 5,
+        title: "EA Sports FC 24",
+        genre: "Спорт",
+        developer: "EA Sports",
+        price: 4499,
+        rating: 3.5,
+        imageUrl: "img/FC_24.jpeg"
+    },
+    {
+        id: 6,
+        title: "Diablo IV",
+        genre: "RPG",
+        developer: "Blizzard",
+        price: 5299,
+        rating: 4,
+        imageUrl: "img/diablo.jpeg"
+    },
+    {
+        id: 7,
+        title: "Resident Evil 4 Remake",
+        genre: "Хоррор",
+        developer: "Capcom",
+        price: 3799,
+        rating: 5,
+        imageUrl: "img/RE_4.jpeg"
+    },
+    {
+        id: 8,
+        title: "Starfield",
+        genre: "RPG",
+        developer: "Bethesda",
+        price: 4299,
+        rating: 4,
+        imageUrl: "img/starfield.jpeg"
+    },
+    {
+        id: 9,
+        title: "Hogwarts Legacy",
+        genre: "Приключение",
+        developer: "Avalanche Software",
+        price: 3499,
+        rating: 4.5,
+        imageUrl: "img/hogleg.jpeg"
+    },
+    {
+        id: 10,
+        title: "Minecraft",
+        genre: "Песочница",
+        developer: "Mojang",
+        price: 1999,
+        rating: 4.5,
+        imageUrl: "img/minecraft.jpeg"
+    },
+    {
+        id: 11,
+        title: "Grand Theft Auto V",
+        genre: "Приключение",
+        developer: "Rockstar Games",
+        price: 1499,
+        rating: 5,
+        imageUrl: "img/gta_v.jpeg"
+    },
+    {
+        id: 12,
+        title: "Red Dead Redemption 2",
+        genre: "Приключение",
+        developer: "Rockstar Games",
+        price: 2499,
+        rating: 5,
+        imageUrl: "img/rdr_2.jpeg"
+    }
+];
+
+const gamesGrid = document.getElementById('games-grid');
+
+// Функция для отрисовки карточек игр
+function renderGames(games, viewMode = 'grid') {
+    gamesGrid.innerHTML = '';
+    gamesGrid.className = `games-grid ${viewMode}-view`;
+    
+    games.forEach(game => {
+        const ratingStars = getRatingStars(game.rating);
+        
+        const gameCard = document.createElement('a');
+        gameCard.href = '#';
+        gameCard.className = 'game-card';
+        
+        gameCard.innerHTML = `
+            <div class="game-card__image">
+                <img src="${game.imageUrl}" alt="Ведьмак 3">
+            </div>
+            <div class="game-card__content">
+                <h3 class="game-card__title">${game.title}</h3>
+                <div class="game-card__info">
+                    <span class="game-card__genre">${game.genre}</span>
+                    <span class="game-card__developer">${game.developer}</span>
+                </div>
+                <div class="game-card__rating">
+                    ${ratingStars}
+                </div>
+                <div class="game-card__footer">
+                    <div class="game-card__price">${game.price.toLocaleString('ru-RU')} ₽</div>
+                    <span class="game-card__link">Подробнее</span>
+                </div>
+            </div>
+        `;
+        
+        gamesGrid.appendChild(gameCard);
+    });
+}
+
+// Функция для получения звезд рейтинга
+function getRatingStars(rating) {
+    let stars = '';
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<i class="fas fa-star"></i>';
+    }
+    
+    if (hasHalfStar) {
+        stars += '<i class="fas fa-star-half-alt"></i>';
+    }
+    
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+        stars += '<i class="far fa-star"></i>';
+    }
+    
+    return stars;
+}
+
+// Инициализация отображения игр
+renderGames(gamesData, 'grid');
+
+// Переключение вида (сетка/список)
+const viewButtons = document.querySelectorAll('.catalog-view__btn');
+viewButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        viewButtons.forEach(btn => btn.classList.remove('catalog-view__btn--active'));
+        this.classList.add('catalog-view__btn--active');
+        
+        const viewMode = this.getAttribute('data-view');
+        renderGames(gamesData, viewMode);
+    });
+});
+
+// Открытие/закрытие фильтров на мобильных
+const filterToggle = document.getElementById('filter-toggle');
+const sidebar = document.getElementById('catalog-sidebar');
+const sidebarClose = document.getElementById('sidebar-close');
+
+if (filterToggle) {
+    filterToggle.addEventListener('click', function() {
+        sidebar.classList.add('catalog-sidebar--active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+if (sidebarClose) {
+    sidebarClose.addEventListener('click', function() {
+        sidebar.classList.remove('catalog-sidebar--active');
+        document.body.style.overflow = '';
+    });
+}
+
+// Закрытие сайдбара при клике вне его
+sidebar.addEventListener('click', function(e) {
+    if (e.target === sidebar) {
+        sidebar.classList.remove('catalog-sidebar--active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Поиск на мобильных
+const searchToggle = document.getElementById('mobile-search-toggle');
+const mobileSearch = document.getElementById('mobile-search');
+
+if (searchToggle && mobileSearch) {
+    let searchVisible = false;
+    
+    searchToggle.addEventListener('click', function() {
+        searchVisible = !searchVisible;
+        mobileSearch.style.display = searchVisible ? 'flex' : 'none';
+    });
+}
+
+// Пагинация
+const paginationNumbers = document.querySelectorAll('.pagination-number');
+const prevBtn = document.querySelector('.pagination-btn--prev');
+const nextBtn = document.querySelector('.pagination-btn--next');
+
+paginationNumbers.forEach(number => {
+    number.addEventListener('click', function() {
+        paginationNumbers.forEach(n => n.classList.remove('pagination-number--active'));
+        this.classList.add('pagination-number--active');
+        
+        // Здесь должна быть логика загрузки соответствующей страницы
+        // Для демонстрации просто показываем сообщение
+        const pageNum = this.textContent;
+        console.log(`Загрузка страницы ${pageNum}`);
+    });
+});
