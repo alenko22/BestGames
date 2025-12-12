@@ -1,15 +1,12 @@
 /* ===== ГЕОМЕТРИЧЕСКИЙ СТИЛЬ - БЕЗ ЗАКРУГЛЕНИЙ, 3 ЦВЕТА ===== */
 
-/* Reset и базовые стили */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Цветовая палитра: #d1bc8a (золотой), черный, приглушенный золотой */
 :root {
-    /* Основные цвета */
     --color-gold: #d1bc8a;
     --color-gold-muted: #a8976e;
     --color-black: #000000;
@@ -17,7 +14,6 @@
     --color-black-lighter: #222222;
     --color-white: #ffffff;
     
-    /* Темная тема */
     --bg-primary: var(--color-black);
     --bg-secondary: var(--color-black-light);
     --bg-tertiary: var(--color-black-lighter);
@@ -28,7 +24,7 @@
     --accent-secondary: var(--color-gold-muted);
     --border-color: var(--color-gold-muted);
     --shadow-color: rgba(209, 188, 138, 0.2);
-    --gradient: var(--color-gold); /* Градиенты заменены на сплошной цвет */
+    --gradient: var(--color-gold);
 }
 
 html {
@@ -59,13 +55,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== КОМПОНЕНТЫ ===== */
 
-/* Кнопки - прямые углы */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
-    border-radius: 0; /* Убраны скругления */
+    
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -143,7 +138,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 
-/* Навигация */
 .nav__list {
     display: flex;
     list-style: none;
@@ -184,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav__link--accent {
     background: var(--accent-primary);
     padding: 8px 20px;
-    border-radius: 0; /* Убраны скругления */
+    
     color: var(--color-black);
     border: 2px solid var(--accent-primary);
 }
@@ -197,7 +191,6 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-primary);
 }
 
-/* Бургер меню */
 .burger {
     display: none;
     flex-direction: column;
@@ -217,7 +210,6 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-/* Переключатель темы */
 .theme-toggle {
     color: var(--text-primary);
     font-size: 20px;
@@ -301,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
 .slider__image-placeholder {
     width: 800px;
     height: 500px;
-    border-radius: 0; /* Убраны скругления */
+    
     box-shadow: 0 8px 32px var(--shadow-color);
     border: 2px solid #918b6f;
 }
@@ -319,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
 .slider__indicator {
     width: 12px;
     height: 12px;
-    border-radius: 0; /* Убраны скругления */
+    
     border: 2px solid var(--text-primary);
     background: transparent;
     cursor: pointer;
@@ -337,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    border-radius: 0; /* Убраны скругления */
+    
     background: var(--bg-secondary);
     border: 2px solid var(--border-color);
     color: var(--text-primary);
@@ -455,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
 .search__button {
     padding: 16px 32px;
     white-space: nowrap;
-    border-radius: 0; /* Убраны скругления */
+    
 }
 
 /* ===== ПРЕИМУЩЕСТВА ===== */
@@ -474,7 +466,7 @@ h1, h2, h3, h4, h5, h6 {
 .advantage-card {
     background: var(--bg-secondary);
     padding: 40px 30px;
-    border-radius: 0; /* Убраны скругления */
+    
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -491,7 +483,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 70px;
     height: 70px;
     margin: 0 auto 20px;
-    border-radius: 0; /* Убраны скругления */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,7 +521,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .game-card {
     background: var(--bg-primary);
-    border-radius: 0; /* Убраны скругления */
     overflow: hidden;
     text-decoration: none;
     color: var(--text-primary);
@@ -560,6 +550,11 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, transparent 50%, var(--bg-primary) 100%);
+}
+
+.game-card__picture {
+    width: 100%;
+    height: 100%;
 }
 
 .game-card__image-placeholder {
@@ -644,7 +639,7 @@ h1, h2, h3, h4, h5, h6 {
 .partner-card {
     background: var(--bg-secondary);
     padding: 40px 20px;
-    border-radius: 0; /* Убраны скругления */
+    
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid #918b6f;
@@ -836,7 +831,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦ ===== */
 
-/* Общие стили для форм */
 .form-group {
     margin-bottom: 25px;
 }
@@ -854,7 +848,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-input {
     width: 100%;
     padding: 14px 20px;
-    border-radius: 0; /* Убраны скругления */
+    
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
@@ -889,7 +883,6 @@ select.form-input {
     min-height: 20px;
 }
 
-/* Каталог */
 .catalog-page {
     min-height: calc(100vh - 70px - 200px);
     padding: 40px 0;
@@ -930,10 +923,9 @@ select.form-input {
     gap: 40px;
 }
 
-/* Сайдбар фильтров */
 .catalog-sidebar {
     background: var(--bg-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     padding: 25px;
     height: fit-content;
     position: sticky;
@@ -1007,7 +999,7 @@ select.form-input {
     height: 18px;
     margin-right: 10px;
     accent-color: var(--accent-primary);
-    border-radius: 0; /* Убраны скругления */
+    
 }
 
 .filter-option__text {
@@ -1040,7 +1032,7 @@ select.form-input {
     width: 100%;
     height: 6px;
     background: var(--bg-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     outline: none;
 }
 
@@ -1049,7 +1041,7 @@ select.form-input {
     width: 20px;
     height: 20px;
     background: var(--accent-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     border: 2px solid var(--color-black);
 }
@@ -1070,18 +1062,15 @@ select.form-input {
     gap: 10px;
 }
 
-/* Основная область каталога */
 .catalog-main {
     background: var(--bg-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     padding: 25px;
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
 }
 
 .catalog-controls {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -1092,6 +1081,7 @@ select.form-input {
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: space-between;
 }
 
 #filter-toggle {
@@ -1099,9 +1089,7 @@ select.form-input {
 }
 
 .catalog-sort {
-    display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .catalog-sort__label {
@@ -1114,7 +1102,7 @@ select.form-input {
 .catalog-sort__select {
     padding: 8px 15px;
     border: 2px solid var(--border-color);
-    border-radius: 0; /* Убраны скругления */
+    
     background: var(--bg-primary);
     color: var(--text-primary);
     font-size: 14px;
@@ -1139,7 +1127,7 @@ select.form-input {
     border: none;
     background: transparent;
     color: var(--text-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1193,7 +1181,6 @@ select.form-input {
     height: 120px;
 }
 
-/* Пагинация */
 .catalog-pagination {
     display: flex;
     justify-content: center;
@@ -1208,7 +1195,7 @@ select.form-input {
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1240,7 +1227,7 @@ select.form-input {
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1267,7 +1254,6 @@ select.form-input {
     padding: 0 5px;
 }
 
-/* Search Toggle Button */
 .search-toggle {
     display: none;
     background: none;
@@ -1328,7 +1314,7 @@ select.form-input {
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
-    border-radius: 0; /* Убраны скругления */
+    
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1354,7 +1340,7 @@ select.form-input {
 
 .admin-tab-content {
     background: var(--bg-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     padding: 30px;
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
@@ -1368,7 +1354,6 @@ select.form-input {
     display: block;
 }
 
-/* Форма добавления игры */
 .admin-form-container {
     max-width: 800px;
     margin: 0 auto;
@@ -1400,7 +1385,6 @@ select.form-input {
     gap: 25px;
 }
 
-/* Загрузка файлов */
 .file-upload {
     margin-top: 5px;
 }
@@ -1411,7 +1395,7 @@ select.form-input {
 
 .file-upload__area {
     border: 2px dashed var(--border-color);
-    border-radius: 0; /* Убраны скругления */
+    
     padding: 40px 20px;
     text-align: center;
     cursor: pointer;
@@ -1455,7 +1439,7 @@ select.form-input {
 .file-preview__image {
     max-width: 200px;
     max-height: 150px;
-    border-radius: 0; /* Убраны скругления */
+    
     overflow: hidden;
     margin-bottom: 10px;
     border: 2px solid var(--border-color);
@@ -1480,7 +1464,6 @@ select.form-input {
     margin-top: 20px;
 }
 
-/* Таблицы */
 .admin-table-container {
     overflow-x: auto;
     border: 2px solid var(--border-color);
@@ -1533,7 +1516,7 @@ select.form-input {
     width: 36px;
     height: 36px;
     border: none;
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -1595,7 +1578,7 @@ select.form-input {
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1639,7 +1622,6 @@ select.form-input {
     letter-spacing: 0.5px;
 }
 
-/* Модальное окно успеха */
 .modal-success {
     text-align: center;
     padding: 20px 0;
@@ -1686,7 +1668,7 @@ select.form-input {
 .auth-form-container {
     background: var(--bg-secondary);
     padding: 40px;
-    border-radius: 0; /* Убраны скругления */
+    
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
 }
@@ -1780,7 +1762,7 @@ select.form-input {
     height: 20px;
     margin-top: 3px;
     accent-color: var(--accent-primary);
-    border-radius: 0; /* Убраны скругления */
+    
 }
 
 .form-group--checkbox .form-label {
@@ -1806,7 +1788,7 @@ select.form-input {
     margin-bottom: 50px;
     padding: 30px;
     background: var(--bg-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
 }
@@ -1820,7 +1802,7 @@ select.form-input {
 .profile-avatar__image {
     width: 100px;
     height: 100px;
-    border-radius: 0; /* Убраны скругления */
+    
     background: var(--bg-tertiary);
     display: flex;
     align-items: center;
@@ -1884,7 +1866,7 @@ select.form-input {
 .profile-section {
     background: var(--bg-secondary);
     padding: 30px;
-    border-radius: 0; /* Убраны скругления */
+    
     box-shadow: 0 4px 16px var(--shadow-color);
     border: 2px solid var(--border-color);
 }
@@ -1908,7 +1890,7 @@ select.form-input {
 .profile-info__item {
     padding: 15px;
     background: var(--bg-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     border: 1px solid var(--border-color);
 }
 
@@ -1939,7 +1921,7 @@ select.form-input {
     gap: 20px;
     padding: 20px;
     background: var(--bg-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     margin-bottom: 15px;
     transition: transform 0.2s ease;
     border: 1px solid var(--border-color);
@@ -1973,7 +1955,7 @@ select.form-input {
 
 .purchase__status-badge {
     padding: 5px 12px;
-    border-radius: 0; /* Убраны скругления */
+    
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -2002,7 +1984,7 @@ select.form-input {
     align-items: center;
     padding: 20px;
     background: var(--bg-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     border: 1px solid var(--border-color);
 }
 
@@ -2031,7 +2013,7 @@ select.form-input {
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
-    border-radius: 0; /* Убраны скругления */
+    
     text-decoration: none;
     cursor: pointer;
     display: flex;
@@ -2080,7 +2062,7 @@ select.form-input {
 
 .modal__content {
     background: var(--bg-secondary);
-    border-radius: 0; /* Убраны скругления */
+    
     width: 100%;
     max-width: 500px;
     overflow: hidden;
@@ -2149,7 +2131,6 @@ select.form-input {
         padding: 0 15px;
     }
     
-    /* Навигация скрывается, появляется бургер */
     .nav {
         display: none;
     }
@@ -2158,10 +2139,13 @@ select.form-input {
         display: flex;
     }
     
-    /* Слайдер */
     .slider {
         height: 500px;
         margin-top: 60px;
+    }
+
+    .slider__content{
+        margin-left: 0;
     }
 
     .slider__slide {
@@ -2171,23 +2155,12 @@ select.form-input {
         justify-content: flex-start;
         align-items: center;
         background: linear-gradient(to bottom, var(--bg-primary) 30%, transparent 70%);
-        /* Возможно, можно вернуть стандартный padding-bottom, если стрелки теперь не мешают */
-        /* padding-bottom: 120px; */
         box-sizing: border-box;
     }
 
     .slider__content.adapt-limit-height {
          display: flex;
          flex-direction: column;
-         align-items: center;
-         justify-content: flex-start;
-         overflow: hidden;
-         width: 100%;
-         /* Пересчитаем высоту, исключив место под стрелки, которые теперь рядом с индикаторами */
-         /* max-height: calc(500px - 200px - высота_стрелок_и_индикаторов); */
-         /* Давайте просто уберем ограничение, если контент умещается */
-         /* max-height: calc(500px - 200px - 120px); */
-         flex: 0 1 auto;
      }
 
     .slider__title {
@@ -2204,7 +2177,7 @@ select.form-input {
      }
 
     .slider__price {
-        font-size: 24px; /* Уменьшим размер цены */
+        font-size: 24px;
         margin-bottom: 20px;
     }
 
@@ -2230,50 +2203,40 @@ select.form-input {
         border: 2px solid #918b6f;
     }
 
-    /* --- Изменения для стрелок --- */
     .slider__arrow {
-        position: absolute; /* Оставляем абсолютное позиционирование */
-        /* Убираем предыдущие top, transform */
-        top: auto; /* Отменяем старое позиционирование */
-        bottom: 5px; /* Размещаем стрелки на одном уровне с индикаторами (их bottom обычно 40px) */
-        width: 40px; /* Размер стрелок */
+        position: absolute;
+        top: auto;
+        bottom: 5px;
+        width: 40px;
         height: 40px;
-        z-index: 15; /* Устанавливаем z-index выше, чем у индикаторов (например, 10), но ниже, чем у слайда (например, 20) */
-        /* Оставляем остальные стили: border-radius, background, border, color, font-size, cursor, display, align-items, justify-content, transition */
+        z-index: 15;
     }
 
-    /* Позиционируем левую стрелку слева от индикаторов */
     .slider__arrow--prev {
-        left: calc(50% - 75px); /* Примерное смещение: половина ширины индикаторов (~60px) + ширина стрелки (40px) / 2 */
+        left: calc(50% - 75px);
         right: auto;
     }
 
-    /* Позиционируем правую стрелку справа от индикаторов */
     .slider__arrow--next {
-        right: calc(50% - 75px); /* Примерное смещение */
+        right: calc(50% - 75px);
         left: auto;
     }
-    /* --- Конец изменений для стрелок --- */
 
 
     .slider__indicators {
-        bottom: 40px; /* Индикаторы остаются на своём месте */
-        z-index: 10; /* Их z-index не изменяем */
-        /* Возможно, стоит немного уменьшить gap между индикаторами */
+        bottom: 40px;
+        z-index: 10;
         gap: 8px;
     }
     
-    /* Преимущества в 2 колонки */
     .advantages__grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Игры в 2 колонки */
     .games__grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Партнеры в 2 колонки */
     .partners__grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2282,7 +2245,6 @@ select.form-input {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    /* Каталог */
     .catalog-content {
         grid-template-columns: 1fr;
     }
@@ -2328,7 +2290,6 @@ select.form-input {
         gap: 15px;
     }
     
-    /* Авторизация */
     .auth-form-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2340,7 +2301,6 @@ select.form-input {
         gap: 0;
     }
     
-    /* Админ панель */
     .admin-page {
         padding: 20px 0;
     }
@@ -2382,7 +2342,6 @@ select.form-input {
         justify-content: space-between;
     }
     
-    /* Личный кабинет */
     .profile-header {
         flex-direction: column;
         gap: 30px;
@@ -2427,13 +2386,12 @@ select.form-input {
     }
     
     .slider {
-        height: 400px;
-        margin-top: 50px;
+        height: 50vh;
+        margin-top: 60px;
     }
 
     .slider__slide {
         padding: 20px 15px;
-        /* padding-bottom: 110px; - убираем, если стрелки не мешают */
     }
 
     .slider__title {
@@ -2448,8 +2406,8 @@ select.form-input {
      }
 
     .slider__price {
-        font-size: 20px; /* Еще меньше на мобильных */
-        margin-bottom: 15px; /* Или другой отступ */
+        font-size: 20px;
+        margin-bottom: 15px;
     }
 
     .slider__image {
@@ -2460,46 +2418,41 @@ select.form-input {
         max-height: 100%;
     }
 
-    /* --- Изменения для стрелок на мобильных --- */
     .slider__arrow {
-        bottom: 5px; /* Корректируем положение на уровне индикаторов */
-        width: 36px; /* Уменьшаем стрелки */
+        bottom: 5px;
+        width: 36px;
         height: 36px;
-        z-index: 15; /* Убедимся, что z-index установлен */
+        z-index: 15;
     }
 
     .slider__arrow--prev {
-        left: calc(50% - 65px); /* Корректируем смещение */
+        left: calc(50% - 65px);
     }
 
     .slider__arrow--next {
-        right: calc(50% - 65px); /* Корректируем смещение */
+        right: calc(50% - 65px);
     }
-    /* --- Конец изменений для стрелок на мобильных --- */
 
 
     .slider__indicators {
-        bottom: 35px; /* Индикаторы тоже могут быть чуть выше */
-        gap: 6px; /* Уменьшаем gap */
+        bottom: 35px;
+        gap: 6px;
         z-index: 10;
     }
 
     .slider__indicator {
-        width: 10px; /* Уменьшаем индикаторы */
+        width: 10px;
         height: 10px;
     }
     
-    /* Преимущества в одну колонку */
     .advantages__grid {
         grid-template-columns: 1fr;
     }
     
-    /* Игры в одну колонку */
     .games__grid {
         grid-template-columns: 1fr;
     }
     
-    /* Партнеры в одну колонку */
     .partners__grid {
         grid-template-columns: 1fr;
     }
@@ -2521,7 +2474,6 @@ select.form-input {
         width: 100%;
     }
     
-    /* Каталог */
     .catalog-page {
         padding: 20px 0;
     }
@@ -2536,6 +2488,7 @@ select.form-input {
     
     .catalog-main {
         padding: 20px;
+        width: 95vw;
     }
     
     .games-grid.grid-view {
@@ -2563,7 +2516,6 @@ select.form-input {
         margin: 10px 0;
     }
     
-    /* Админ панель */
     .admin-header {
         margin-bottom: 30px;
     }
@@ -2599,7 +2551,6 @@ select.form-input {
         font-size: 16px;
     }
     
-    /* Авторизация */
     .auth-page {
         padding: 40px 0;
     }
@@ -2617,7 +2568,6 @@ select.form-input {
         font-size: 13px;
     }
     
-    /* Личный кабинет */
     .profile-page {
         padding: 20px 0;
     }
@@ -2665,9 +2615,6 @@ select.form-input {
     .modal__content {
         max-width: 100%;
     }
-}
-
-@media (max-width: 480px) {
     .games-grid.grid-view {
         grid-template-columns: 1fr;
     }
@@ -2682,14 +2629,13 @@ select.form-input {
     }
 }
 
+
 /* Десктоп (1920px и больше) */
 @media (min-width: 1920px) {
-    /* Увеличение контейнера */
     .container {
         max-width: 1600px;
     }
     
-    /* Увеличение слайдера */
     .slider {
         height: 700px;
     }
@@ -2698,12 +2644,10 @@ select.form-input {
         font-size: 56px;
     }
     
-    /* Больше карточек в ряду */
     .games__grid {
         grid-template-columns: repeat(5, 1fr);
     }
     
-    /* Увеличение шрифтов */
     .section-title {
         font-size: 42px;
     }

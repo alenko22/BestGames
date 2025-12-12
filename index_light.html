@@ -13,17 +13,14 @@
     <link rel="icon" href="img/icon.svg">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <!-- Logo -->
                 <a href="index.html" class="logo">
                     <img src="img/icon.svg" alt="Логотип" style="max-width: 50px; max-height: 50px;">
                     <span class="logo__text">BestGames</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#search-section" class="nav__link">Поиск</a></li>
@@ -33,7 +30,6 @@
                     </ul>
                 </nav>
 
-                <!-- Mobile Menu Button -->
                 <button class="burger" aria-label="Меню">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
@@ -45,17 +41,15 @@
                     <button class="mobile-menu__close"><i class="fas fa-times"></i></button>
                     <nav class="mobile-nav">
                     <ul class="mobile-nav__list">
-                        <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link">Главная</a></li>
-                        <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link">Каталог</a></li>
-                        <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link">Регистрация</a></li>
-                        <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link">Войти</a></li>
-                        <li class="mobile-nav__item"><a href="profile.html" class="mobile-nav__link">Личный кабинет</a></li>
+                        <li class="nav__item"><a href="#search-section" class="mobile-nav__link">Поиск</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="mobile-nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="login.html" class="nav__link nav__link--accent">Войти</a></li>
+                        <li class="nav__item"><a href="profile.html" class="mobile-nav__link">Личный кабинет</a></li>
                     </ul>
                     </nav>
                 </div>
                 </div>
 
-                <!-- Theme Toggle -->
                 <a href="index_light.html" class="theme-toggle" aria-label="Переключить на светлую тему">
                     <i class="fas fa-moon"></i>
                 </a>
@@ -63,53 +57,50 @@
         </div>
     </header>
 
-    <!-- Hero Slider -->
     <section class="slider">
         <div class="slider__container">
-            <!-- Slide 1 -->
             <div class="slider__slide slider__slide--active">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Clair Obscur: Expedition 33</h2>
                     <p class="slider__description">Окунитесь в Прекрасную эпоху Франции</p>
-                    <div class="slider__price">1,200 ₽</div>
+                    <div class="slider__price">2,999 ₽</div>
+                    <a href="#" class="btn--secondary">Подробнее</a>
                 </div>
                 <div class="slider__image">
                     <img src="img/clair.jpeg" alt="Факторио" class="slider__image-placeholder">
                 </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="slider__slide">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Dispatch</h2>
                     <p class="slider__description">Супергеройская комедия</p>
-                    <div class="slider__price">3,599 ₽</div>
+                    <div class="slider__price">500 ₽</div>
+                    <a href="#" class="btn--secondary">Подробнее</a>
                 </div>
                 <div class="slider__image">
                     <img src="img/dispatch.jpeg" alt="Факторио" class="slider__image-placeholder">
                 </div>
             </div>
 
-            <!-- Slide 3 -->
             <div class="slider__slide">
-                <div class="slider__content">
+                <div class="slider__content adapt-limit-height">
                     <h2 class="slider__title">Hollow Knight: Silksong</h2>
                     <p class="slider__description">Долгожданная метроидвания от Team Cherry</p>
-                    <div class="slider__price">4,299 ₽</div>
+                    <div class="slider__price">1,999 ₽</div>
+                    <a href="#" class="btn--secondary">Подробнее</a>
                 </div>
                 <div class="slider__image">
                     <img src="img/silksong.jpeg" alt="Факторио" class="slider__image-placeholder">
                 </div>
             </div>
 
-            <!-- Slide Indicators -->
             <div class="slider__indicators">
                 <button class="slider__indicator slider__indicator--active" data-slide="0"></button>
                 <button class="slider__indicator" data-slide="1"></button>
                 <button class="slider__indicator" data-slide="2"></button>
             </div>
 
-            <!-- Navigation Arrows -->
             <button class="slider__arrow slider__arrow--prev">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -158,7 +149,6 @@
         </div>
     </section>
 
-    <!-- Quick Search -->
     <section class="search" id="search-section">
         <div class="container">
             <h2 class="section-title">Быстрый поиск по жанрам</h2>
@@ -179,14 +169,13 @@
         </div>
     </section>
 
-    <!-- Popular Games -->
     <section class="games">
         <div class="container">
             <h2 class="section-title">Популярные игры</h2>
             <div class="games__grid">
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/witcher.jpeg" alt="Ведьмак 3">
+                        <img src="img/witcher.jpeg" alt="Ведьмак 3" class="game-card__picture">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">The Witcher 3: Wild Hunt</h3>
@@ -210,7 +199,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/COD.jpeg" alt="Ведьмак 3" class="game-card__picture">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Call of Duty: Modern Warfare III</h3>
@@ -234,7 +223,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/FC_24.jpeg" alt="Ведьмак 3" class="game-card__picture">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">EA Sports FC 24</h3>
@@ -258,7 +247,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/diablo.jpeg" alt="Ведьмак 3" class="game-card__picture">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Diablo IV</h3>
@@ -282,7 +271,7 @@
 
                 <a href="catalog.html" class="game-card">
                     <div class="game-card__image">
-                        <img src="img/factorio.jpeg" alt="Ведьмак 3">
+                        <img src="img/RE_4.jpeg" alt="Ведьмак 3" class="game-card__picture">
                     </div>
                     <div class="game-card__content">
                         <h3 class="game-card__title">Resident Evil 4 Remake</h3>
@@ -307,7 +296,6 @@
         </div>
     </section>
 
-    <!-- Partners -->
      <section class="partners">
         <div class="container">
             <h2 class="section-title">Наши партнеры</h2>
@@ -344,7 +332,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -414,24 +401,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <div class="mobile-menu__content">
-            <button class="mobile-menu__close">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="mobile-nav">
-                <ul class="mobile-nav__list">
-                    <li class="mobile-nav__item"><a href="#search-section" class="mobile-nav__link"><i class="fas fa-search"></i> Поиск</a></li>
-                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог игр</a></li>
-                    <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
-                    <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link"><i class="fas fa-user-plus"></i> Регистрация</a></li>
-                    <li class="mobile-nav__item"><a href="profile.html" class="mobile-nav__link"><i class="fas fa-user-circle"></i> Личный кабинет</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
 
     <script src="js/script.js"></script>
 </body>

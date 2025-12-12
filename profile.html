@@ -12,26 +12,21 @@
     <link rel="icon" href="img/icon.svg">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <!-- Logo -->
                 <a href="index.html" class="logo">
                     <img src="img/icon.svg" alt="Логотип" style="max-width: 50px; max-height: 50px;">
                     <span class="logo__text">BestGames</span>
                 </a>
 
-                <!-- Navigation -->
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
                         <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="index.html" class="nav__link nav__link--accent">Выйти</a></li>
                     </ul>
                 </nav>
 
-                <!-- Mobile Menu Button -->
                 <button class="burger" aria-label="Меню">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
@@ -45,9 +40,6 @@
                     <ul class="mobile-nav__list">
                         <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link">Главная</a></li>
                         <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link">Каталог</a></li>
-                        <li class="mobile-nav__item"><a href="register.html" class="mobile-nav__link">Регистрация</a></li>
-                        <li class="mobile-nav__item"><a href="login.html" class="mobile-nav__link">Войти</a></li>
-                        <li class="mobile-nav__item"><a href="profile.html" class="mobile-nav__link">Личный кабинет</a></li>
                     </ul>
                     </nav>
                 </div>
@@ -56,7 +48,6 @@
         </div>
     </header>
 
-    <!-- Profile Page -->
     <main class="profile-page">
         <div class="container">
             <div class="profile-header">
@@ -88,7 +79,6 @@
             </div>
 
             <div class="profile-content">
-                <!-- User Information -->
                 <section class="profile-section">
                     <h2 class="profile-section__title">Ваши данные</h2>
                     <div class="profile-info">
@@ -115,7 +105,6 @@
                     </div>
                 </section>
 
-                <!-- Purchase History -->
                 <section class="profile-section">
                     <h2 class="profile-section__title">Вы покупали:</h2>
                     <div class="purchases">
@@ -170,7 +159,6 @@
                     </div>
                 </section>
 
-                <!-- Profile Settings -->
                 <section class="profile-section">
                     <h2 class="profile-section__title">Настройки профиля</h2>
                     <div class="profile-settings">
@@ -218,7 +206,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -252,52 +239,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <div class="mobile-menu__content">
-            <button class="mobile-menu__close">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="mobile-nav">
-                <ul class="mobile-nav__list">
-                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-home"></i> Главная</a></li>
-                    <li class="mobile-nav__item"><a href="catalog.html" class="mobile-nav__link"><i class="fas fa-gamepad"></i> Каталог</a></li>
-                    <li class="mobile-nav__item"><a href="index_light.html" class="mobile-nav__link"><i class="fas fa-sun"></i> Светлая тема</a></li>
-                    <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Change Password Modal -->
-    <div class="modal" id="change-password-modal">
-        <div class="modal__content">
-            <div class="modal__header">
-                <h3 class="modal__title">Смена пароля</h3>
-                <button class="modal__close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal__body">
-                <form class="password-form">
-                    <div class="form-group">
-                        <label for="current-password" class="form-label">Текущий пароль</label>
-                        <input type="password" id="current-password" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="new-password" class="form-label">Новый пароль</label>
-                        <input type="password" id="new-password" class="form-input" required minlength="8">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-new-password" class="form-label">Подтвердите новый пароль</label>
-                        <input type="password" id="confirm-new-password" class="form-input" required>
-                    </div>
-                    <button type="submit" class="btn btn--primary">Сохранить новый пароль</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="js/script.js"></script>
 </body>

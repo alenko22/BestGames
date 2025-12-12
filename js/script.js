@@ -1,22 +1,21 @@
 const burger = document.querySelector('.burger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileMenuClose = document.querySelector('.mobile-menu__close');
-const mobileMenuLinks = document.querySelectorAll('.mobile-nav__link'); // Ссылки в мобильном меню
+const mobileMenuLinks = document.querySelectorAll('.mobile-nav__link');
 
-if (burger && mobileMenu) { // Проверяем, существуют ли элементы перед добавлением обработчиков
+if (burger && mobileMenu) {
     burger.addEventListener('click', function() {
         mobileMenu.classList.add('mobile-menu--active');
-        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        document.body.style.overflow = 'hidden';
     });
 
-    if (mobileMenuClose) { // Проверяем наличие кнопки закрытия
+    if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', function() {
             mobileMenu.classList.remove('mobile-menu--active');
-            document.body.style.overflow = ''; // Возвращаем прокрутку
+            document.body.style.overflow = '';
         });
     }
 
-    // Закрытие меню при клике на ссылку
     if (mobileMenuLinks) {
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -28,7 +27,6 @@ if (burger && mobileMenu) { // Проверяем, существуют ли э�
 }
 
 
-// Слайдер (только для главной страницы)
 const slides = document.querySelectorAll('.slider__slide');
 if (slides.length > 0) {
     const indicators = document.querySelectorAll('.slider__indicator');
@@ -38,19 +36,16 @@ if (slides.length > 0) {
     let slideInterval;
     
     function showSlide(index) {
-        // Скрыть все слайды
         slides.forEach(slide => {
             slide.classList.remove('slider__slide--active');
         });
         
-        // Убрать активный класс со всех индикаторов
         if (indicators.length > 0) {
             indicators.forEach(indicator => {
                 indicator.classList.remove('slider__indicator--active');
             });
         }
         
-        // Показать текущий слайд
         slides[index].classList.add('slider__slide--active');
         if (indicators.length > index) {
             indicators[index].classList.add('slider__indicator--active');
@@ -58,7 +53,6 @@ if (slides.length > 0) {
         currentSlide = index;
     }
     
-    // Инициализация индикаторов
     if (indicators.length > 0) {
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
@@ -68,7 +62,6 @@ if (slides.length > 0) {
         });
     }
     
-    // Навигация стрелками
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             let newIndex = currentSlide - 1;
@@ -87,13 +80,11 @@ if (slides.length > 0) {
         });
     }
     
-    // Функция для сброса интервала автопрокрутки
     function resetSlideInterval() {
         clearInterval(slideInterval);
         startSlideInterval();
     }
     
-    // Функция для запуска автопрокрутки
     function startSlideInterval() {
         slideInterval = setInterval(() => {
             let newIndex = currentSlide + 1;
@@ -102,10 +93,8 @@ if (slides.length > 0) {
         }, 5000);
     }
     
-    // Автоматическое переключение слайдов
     startSlideInterval();
     
-    // Остановка автопрокрутки при наведении
     const slider = document.querySelector('.slider__container');
     if (slider) {
         slider.addEventListener('mouseenter', () => {
@@ -118,7 +107,6 @@ if (slides.length > 0) {
     }
 }
 
-// Поиск с подсказками (только для главной страницы)
 const searchInput = document.querySelector('.search__input');
 const searchSuggestions = document.querySelector('.search__suggestions');
 const suggestionItems = document.querySelectorAll('.search__suggestion');
@@ -134,7 +122,6 @@ if (searchInput && searchSuggestions) {
         }, 200);
     });
     
-    // Обработка выбора подсказки
     if (suggestionItems.length > 0) {
         suggestionItems.forEach(item => {
             item.addEventListener('mousedown', (e) => {
@@ -147,7 +134,6 @@ if (searchInput && searchSuggestions) {
     }
 }
 
-// Плавная прокрутка для якорных ссылок (общее для всех страниц)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -169,7 +155,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Анимация при скролле (только для главной страницы)
 const animateOnScroll = function() {
     const elements = document.querySelectorAll('.advantage-card, .game-card, .partner-card');
     
@@ -184,7 +169,6 @@ const animateOnScroll = function() {
     });
 };
 
-// Инициализация анимации только если есть анимируемые элементы
 const animatedElements = document.querySelectorAll('.advantage-card, .game-card, .partner-card');
 if (animatedElements.length > 0) {
     animatedElements.forEach(element => {
@@ -196,11 +180,9 @@ if (animatedElements.length > 0) {
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
     
-    // Запуск анимации для видимых элементов при загрузке
     setTimeout(animateOnScroll, 100);
 }
 
-// Тема для index_light.html
 if (window.location.pathname.includes('index_light.html')) {
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
@@ -209,10 +191,8 @@ if (window.location.pathname.includes('index_light.html')) {
     }
 }
 
-// Валидация форм (общее для всех страниц с формами)
 const forms = document.querySelectorAll('form');
 forms.forEach(form => {
-    // Пропускаем форму каталога, если она есть
     if (!form.id || !form.id.includes('catalog')) {
         form.addEventListener('submit', function(e) {
             const requiredFields = this.querySelectorAll('[required]');
@@ -223,7 +203,6 @@ forms.forEach(form => {
                     isValid = false;
                     field.style.borderColor = '#ff3860';
                     
-                    // Находим ближайший элемент с ошибкой
                     let errorElement = field.nextElementSibling;
                     while (errorElement && !errorElement.classList.contains('form-error')) {
                         errorElement = errorElement.nextElementSibling;
@@ -235,7 +214,6 @@ forms.forEach(form => {
                 } else {
                     field.style.borderColor = '';
                     
-                    // Находим ближайший элемент с ошибкой
                     let errorElement = field.nextElementSibling;
                     while (errorElement && !errorElement.classList.contains('form-error')) {
                         errorElement = errorElement.nextElementSibling;
@@ -247,7 +225,6 @@ forms.forEach(form => {
                 }
             });
             
-            // Проверка паролей на странице регистрации
             const passwordField = this.querySelector('#password');
             const confirmPasswordField = this.querySelector('#confirm-password');
             
@@ -275,7 +252,6 @@ forms.forEach(form => {
     }
 });
 
-// Сброс ошибок при вводе в поля форм
 const formInputs = document.querySelectorAll('.form-input');
 formInputs.forEach(input => {
     input.addEventListener('input', function() {
@@ -291,12 +267,10 @@ formInputs.forEach(input => {
         }
     });
 });
-// Функция для форматирования цены
 function formatPrice(price) {
     return price.toLocaleString('ru-RU') + ' ₽';
 }
 
-// Функция для отображения рейтинга в звездах
 function getRatingStars(rating) {
     let stars = '';
     const fullStars = Math.floor(rating);
@@ -318,7 +292,6 @@ function getRatingStars(rating) {
     return stars;
 }
 
-// Переключение вкладок
 const tabs = document.querySelectorAll('.admin-tab');
 const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -326,19 +299,15 @@ tabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const tabId = this.getAttribute('data-tab');
         
-        // Удаляем активный класс со всех вкладок
         tabs.forEach(t => t.classList.remove('admin-tab--active'));
         tabPanes.forEach(p => p.classList.remove('tab-pane--active'));
         
-        // Добавляем активный класс к текущей вкладке
         this.classList.add('admin-tab--active');
         
-        // Показываем соответствующую панель
         document.getElementById(tabId).classList.add('tab-pane--active');
     });
 });
 
-// Инициализация каталога
 const gamesData = [
     {
         id: 1,
@@ -452,7 +421,6 @@ const gamesData = [
 
 const gamesGrid = document.getElementById('games-grid');
 
-// Функция для отрисовки карточек игр
 function renderGames(games, viewMode = 'grid') {
     gamesGrid.innerHTML = '';
     gamesGrid.className = `games-grid ${viewMode}-view`;
@@ -466,7 +434,7 @@ function renderGames(games, viewMode = 'grid') {
         
         gameCard.innerHTML = `
             <div class="game-card__image">
-                <img src="${game.imageUrl}" alt="Ведьмак 3">
+                <img src="${game.imageUrl}" alt="Ведьмак 3" class="game-card__picture">
             </div>
             <div class="game-card__content">
                 <h3 class="game-card__title">${game.title}</h3>
@@ -488,7 +456,6 @@ function renderGames(games, viewMode = 'grid') {
     });
 }
 
-// Функция для получения звезд рейтинга
 function getRatingStars(rating) {
     let stars = '';
     const fullStars = Math.floor(rating);
@@ -510,10 +477,8 @@ function getRatingStars(rating) {
     return stars;
 }
 
-// Инициализация отображения игр
 renderGames(gamesData, 'grid');
 
-// Переключение вида (сетка/список)
 const viewButtons = document.querySelectorAll('.catalog-view__btn');
 viewButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -525,7 +490,6 @@ viewButtons.forEach(button => {
     });
 });
 
-// Открытие/закрытие фильтров на мобильных
 const filterToggle = document.getElementById('filter-toggle');
 const sidebar = document.getElementById('catalog-sidebar');
 const sidebarClose = document.getElementById('sidebar-close');
@@ -544,7 +508,6 @@ if (sidebarClose) {
     });
 }
 
-// Закрытие сайдбара при клике вне его
 sidebar.addEventListener('click', function(e) {
     if (e.target === sidebar) {
         sidebar.classList.remove('catalog-sidebar--active');
@@ -552,7 +515,6 @@ sidebar.addEventListener('click', function(e) {
     }
 });
 
-// Поиск на мобильных
 const searchToggle = document.getElementById('mobile-search-toggle');
 const mobileSearch = document.getElementById('mobile-search');
 
@@ -565,7 +527,6 @@ if (searchToggle && mobileSearch) {
     });
 }
 
-// Пагинация
 const paginationNumbers = document.querySelectorAll('.pagination-number');
 const prevBtn = document.querySelector('.pagination-btn--prev');
 const nextBtn = document.querySelector('.pagination-btn--next');
@@ -575,8 +536,6 @@ paginationNumbers.forEach(number => {
         paginationNumbers.forEach(n => n.classList.remove('pagination-number--active'));
         this.classList.add('pagination-number--active');
         
-        // Здесь должна быть логика загрузки соответствующей страницы
-        // Для демонстрации просто показываем сообщение
         const pageNum = this.textContent;
         console.log(`Загрузка страницы ${pageNum}`);
     });
