@@ -191,6 +191,21 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--accent-primary);
 }
 
+.mobile-nav__link--accent {
+    background: var(--accent-primary);
+    padding: 8px 20px;
+    color: var(--color-black);
+    border: 2px solid var(--accent-primary);
+}
+
+.mobile-nav__link--accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    background: var(--color-black);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
 .burger {
     display: none;
     flex-direction: column;
